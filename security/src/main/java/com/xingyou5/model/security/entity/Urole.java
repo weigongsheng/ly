@@ -15,4 +15,8 @@ public class Urole extends UroleTbl implements Serializable{
 	public static final Integer ADMIN_CUSTOMER=2;//客户管理员
 	public static final Integer ADMIN_SUPPLIER=3;//仓配网点管理员
 	//----管理平台    END------//
+	public void setMenuModel(Uresource menuModel) {
+		// TODO Auto-generated method stub
+		
+	}
 }
