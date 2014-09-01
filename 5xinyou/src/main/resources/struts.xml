@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.objectFactory" value="spring" />
+
+<package name="home" namespace="/" extends="struts-default">  
+   <default-action-ref name="index" />  
+   <action name="index" >  
+       <result name="success">/index.jsp</result>  
+   </action>  
+</package>  
+
+	<package name="yipin-default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+			<result-type name="captchaImage" class="com.google.code.jcaptcha4struts2.core.actions.support.CaptchaImageResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor" />
+			<interceptor name="responseCacheInterceptor" class="com.ytoxl.yipin.web.interceptor.ResponseCacheInterceptor" />
+			<interceptor name="noResponseCacheInterceptor" class="com.ytoxl.yipin.web.interceptor.NoResponseCacheInterceptor" />
+			<!-- <interceptor name="jcaptchaValidation" class="com.google.code.jcaptcha4struts2.core.interceptors.JCaptchaValidationIntercepter" /> -->
+			 
+			
+			 
+						
+		</interceptors>
+		
+        
+        <default-action-ref name="acctionError"></default-action-ref>
+       
+        <global-results>
+        	<result name="jsonMsg" type="json">
+        		<param name="root">message</param>
+        	</result>
+        	<!-- 找不到那件商品或者排期 用户通过改变url地址-->
+        	<result name="error">/WEB-INF/pages/error/404.jsp</result>
+        	<result name="505">/WEB-INF/pages/error/505.jsp</result>
+        	<result name="index">/index.jsp</result>
+        	<result name="globalLogon">/WEB-INF/pages/index/login.jsp</result>
+        </global-results>
+        <!-- struts2 异常配置 
+        <global-exception-mappings>
+        	<exception-mapping result="505" exception="java.lang.Exception"/>
+        </global-exception-mappings>
+        -->
+        <action name="jcaptcha_image" class="com.google.code.jcaptcha4struts2.core.actions.JCaptchaImageAction">
+			<result type="captchaImage" />
+		</action> 
+         <action name="acctionError" >
+            <result>/WEB-INF/pages/error/404.jsp</result>
+        </action>  
+ 
+	</package>
+	
+	 
+</struts>
