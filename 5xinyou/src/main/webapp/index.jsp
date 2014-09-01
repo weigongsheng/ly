@@ -41,7 +41,7 @@
             </ul>
             <div class="jialun_nav_ulb_search">
             	<div class="jialun_nav_ulb_search_input">
-                <input type="text" class="jialun_nav_ulb_search_input" style="float: left; padding: 3px 6px; width: 190px; height: 22px; border: none; display: inline; color: rgb(209, 209, 209);" name="txt_stext" id="select_text" value="" x-webkit-speech="">
+                <input type="text" class="jialun_nav_ulb_search_input" style="float: left; padding: 3px 6px; width: 190px; height: 22px; border: none; display: inline; color: rgb(209, 209, 209);" name="txt_stext" id="select_text" value=""  >
                 </div>
                 <div class="jialun_nav_ulb_search_search" style="float:right; width:34px; padding:0; margin:0; border:none; display:inline;"><a href="javascript:void(0);" onclick="trissis.index.searchproduct();"><img src="./index_files/graycharm_search.png" width="34" height="28" alt="我要搜"></a></div>
             </div>
