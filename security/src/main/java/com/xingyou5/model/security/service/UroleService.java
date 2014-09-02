@@ -4,47 +4,38 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.xingyou5.model.base.web.BasePagination;
 import com.xingyou5.model.security.entity.Uresource;
 import com.xingyou5.model.security.entity.Urole;
-import com.xingyou5.model.security.exception.YtoxlUserException;
-
- 
+import com.xingyou5.model.security.exception.XingYou5UserException;
 
 
 public interface UroleService {
 
-	/**
-	 * 查询角色
-	 * @param uroleModelPage :（角色名  uroleName  资源 url）
-	 * @throws YtoxlUserException 
-	 * */
-	public void searchUroles(BasePagination<Urole> uroleModelPage) throws YtoxlUserException;
-
+	 
 	/**
 	 * 保存角色
 	 * @param urole
 	 * @return
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
-	public void saveUrole(Urole urole) throws YtoxlUserException ;
+	public void saveUrole(Urole urole) throws XingYou5UserException ;
 	
 	/**
 	 * 判断角色名是否重复
 	 * @param uroleName 角色名
 	 * @return boolean true :非重复 false:重复
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
-	public boolean repeatUroleName(String uroleName) throws YtoxlUserException;
+	public boolean repeatUroleName(String uroleName) throws XingYou5UserException;
 	
 	/**
 	 * 判断角色名是否重复
 	 * @param uroleName 角色名
 	 * @param uroleId 角色Id
 	 * @return boolean true :非重复 false:重复
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
-	public  boolean repeatUroleNameUroleId(String uroleName, Integer uroleId) throws YtoxlUserException;
+	public  boolean repeatUroleNameUroleId(String uroleName, Integer uroleId) throws XingYou5UserException;
 	
 	/**
 	 * 获取角色可访问的菜单
@@ -65,9 +56,9 @@ public interface UroleService {
      * @param urole
      * @param uresourceIds
      * @return
-     * @throws YtoxlUserException 
+     * @throws XingYou5UserException 
      * */
-	public void saveUroleUresources(Urole urole, List<Integer> uresourceIds) throws YtoxlUserException;
+	public void saveUroleUresources(Urole urole, List<Integer> uresourceIds) throws XingYou5UserException;
 
 	/**
 	 * 激活或禁用角色
@@ -117,17 +108,9 @@ public interface UroleService {
 	 * @param urole
 	 * @param uresourceIds 
 	 * @return
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
-	public  void saveUroleUresources(Urole urole, String uresourceIds) throws YtoxlUserException;
+	public  void saveUroleUresources(Urole urole, String uresourceIds) throws XingYou5UserException;
 	
-	
-//	/**
-//	 * 查询角色 包含被禁用的角色资源
-//	 * @param uroleModelPage :（角色名  uroleName  资源 url）
-//	 * @throws YtoxlUserException 
-//	 * */
-//	public void searchUrolesIncUnUroleUres(BasePagination<Urole> uroleModelPage);
-
 	
 }

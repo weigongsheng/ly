@@ -19,7 +19,7 @@ import com.xingyou5.model.security.CustomInvocationSecurityMetadataSourceService
 import com.xingyou5.model.security.dao.mapper.UroleMapper;
 import com.xingyou5.model.security.entity.Uresource;
 import com.xingyou5.model.security.entity.Urole;
-import com.xingyou5.model.security.exception.YtoxlUserException;
+import com.xingyou5.model.security.exception.XingYou5UserException;
 import com.xingyou5.model.security.service.UresourceService;
 import com.xingyou5.model.security.service.UroleService;
 import com.xingyou5.model.security.service.UserService;
@@ -37,41 +37,15 @@ public class UroleServiceImpl implements UroleService {
 	@Autowired
 	private CustomInvocationSecurityMetadataSourceService customSecurityMetadataSource ;
 	
-	/**
-	 * 查询角色
-	 * @param uroleModelPage :(角色名  uroleName,状态  status , 创建者 createByUserIds  )
-	 * @throws YtoxlUserException 
-	 * */
-	 
-	public void searchUroles(BasePagination<Urole> uroleModelPage) throws YtoxlUserException{
-		Map<String, Object> searchParams = uroleModelPage.getSearchParamsMap();
-		//获取当前登录人的用户Id
-		Integer userId = userService.getCurrentUser().getUserId();
-		//获取当前登录人的用户Id其所有子用户Id 以及自己
-		searchParams.put("createByUserIds", userService.listUserIdByUserId(userId));
-		if (uroleModelPage.isNeedSetTotal()) {
-			Integer total = uroleMapper.searchUrolesCount(searchParams);
-			uroleModelPage.setTotal(total);
-		}
-		Collection<Urole> result = uroleMapper.searchUroles(searchParams);
-		if(result!=null){
-			//给每个角色model赋值对应的资源model
-			for(Urole uroleModel:result){
-				Uresource menuModel = getUroleMenu(uroleModel.getUroleId());
-				uroleModel.setMenuModel(menuModel);
-			}
-		}
-		uroleModelPage.setResult(result);
-	}
 
 	/**
 	 * 保存角色
 	 * @param urole
 	 * @return
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
 	 
-	public void saveUrole(Urole urole) throws YtoxlUserException {
+	public void saveUrole(Urole urole) throws XingYou5UserException {
 		try {
 				if(urole.getUroleId()!=null){
 					uroleMapper.update(urole);
@@ -84,11 +58,11 @@ public class UroleServiceImpl implements UroleService {
 						urole.setStatus(Urole.STATUS_ABLE);
 						uroleMapper.add(urole);
 					}else{
-						throw new YtoxlUserException(CodeConstants.E_UROLENAME_REPEAT);
+						throw new XingYou5UserException(CodeConstants.E_UROLENAME_REPEAT);
 					}
 				}
 		} catch (Exception e) {
-			throw new YtoxlUserException(e.getMessage());
+			throw new XingYou5UserException(e.getMessage());
 		}
 	}
 
@@ -96,10 +70,10 @@ public class UroleServiceImpl implements UroleService {
 	 * 判断角色名是否重复
 	 * @param uroleName 角色名
 	 * @return boolean true :非重复 false:重复
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
 	 
-	public boolean repeatUroleName(String uroleName) throws YtoxlUserException{
+	public boolean repeatUroleName(String uroleName) throws XingYou5UserException{
 		Integer userId = userService.getCurrentUser().getUserId();
 		List<Urole> uroles = uroleMapper.listCreateUrolesByUserId(userId);
 		if(uroles==null){
@@ -119,10 +93,10 @@ public class UroleServiceImpl implements UroleService {
 	 * @param uroleName 角色名
 	 * @param uroleId 角色Id
 	 * @return boolean true :非重复 false:重复
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
 	 
-	public boolean repeatUroleNameUroleId(String uroleName,Integer uroleId) throws YtoxlUserException{
+	public boolean repeatUroleNameUroleId(String uroleName,Integer uroleId) throws XingYou5UserException{
 		if(uroleId==null||uroleId==0){
 			return repeatUroleName(uroleName);
 		}
@@ -149,7 +123,7 @@ public class UroleServiceImpl implements UroleService {
      * @return
      * */
 	 
-	public void saveUroleUresources(Urole urole,List<Integer> uresourceIds)  throws YtoxlUserException{
+	public void saveUroleUresources(Urole urole,List<Integer> uresourceIds)  throws XingYou5UserException{
         saveUrole(urole);
 		Integer uroleId = urole.getUroleId();
 		//原有uresourceIds
@@ -306,12 +280,12 @@ public class UroleServiceImpl implements UroleService {
 	 * @param urole
 	 * @param uresourceIds 
 	 * @return
-	 * @throws YtoxlUserException 
+	 * @throws XingYou5UserException 
 	 * */
 	 
-	public void saveUroleUresources(Urole urole,String uresourceIds) throws YtoxlUserException{
+	public void saveUroleUresources(Urole urole,String uresourceIds) throws XingYou5UserException{
 		if(uresourceIds==null||uresourceIds.equals("")){
-			throw new YtoxlUserException(CodeConstants.E_PARAM_NOTCORRECT);
+			throw new XingYou5UserException(CodeConstants.E_PARAM_NOTCORRECT);
 		}
 		String[] ids = uresourceIds.split(",");
 		List<Integer> list = new ArrayList<Integer>();

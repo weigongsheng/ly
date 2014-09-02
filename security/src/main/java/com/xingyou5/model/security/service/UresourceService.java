@@ -57,10 +57,4 @@ public interface UresourceService {
 	 * */
 	public Uresource getAllMenuModel();
 	
-//	/**
-//	 * 获取菜单，及对应的角色    系统启动时自动加载的  
-//	 * @param onlyMenu true：则只取菜单资源，去除功能性资源    false：取所有资源
-//	 * */
-//	public Uresource getMenuModelForSystem(boolean onlyMenu);
-//	
 }

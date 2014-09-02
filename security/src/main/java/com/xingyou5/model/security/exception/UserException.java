@@ -3,45 +3,45 @@ package com.xingyou5.model.security.exception;
 import com.xingyou5.model.base.exception.BaseException;
 
 
-public class ZebraUserException extends BaseException {
+public class UserException extends BaseException {
 	private final static long serialVersionUID = 6476473452739657628L;
     private String messageOrCode;
     
-	public ZebraUserException() {
+	public UserException() {
 		super();
 	}
 
-	public ZebraUserException(String messageOrCode) {
+	public UserException(String messageOrCode) {
 		super(messageOrCode);
 		this.messageOrCode = messageOrCode;
 	}
 
-	public ZebraUserException(String messageOrCode, String[] errorValues) {
+	public UserException(String messageOrCode, String[] errorValues) {
 		super(messageOrCode,errorValues);
 		this.messageOrCode = messageOrCode;
 	}
 
-	public ZebraUserException(String messageOrCode, String errorValue) {
+	public UserException(String messageOrCode, String errorValue) {
 		super(messageOrCode,errorValue);
 		this.messageOrCode = messageOrCode;
 	}
 	
-	public ZebraUserException(String messageOrCode, Throwable cause) {
+	public UserException(String messageOrCode, Throwable cause) {
 		super(messageOrCode, cause);
 		this.messageOrCode = messageOrCode;
 	}
 
-	public ZebraUserException(Throwable cause) {
+	public UserException(Throwable cause) {
 		super(cause);
 	}
 
-	public ZebraUserException(String messageOrCode, String[] errorValues,
+	public UserException(String messageOrCode, String[] errorValues,
 			Throwable cause) {
 		super(messageOrCode,errorValues, cause);
 		this.messageOrCode = messageOrCode;
 	}
 	
-	public ZebraUserException(String messageOrCode, String errorValue,
+	public UserException(String messageOrCode, String errorValue,
 			Throwable cause) {
 		super(messageOrCode,errorValue, cause);
 		this.messageOrCode = messageOrCode;
