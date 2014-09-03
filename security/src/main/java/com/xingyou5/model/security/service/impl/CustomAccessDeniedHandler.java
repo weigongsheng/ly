@@ -14,7 +14,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.AccessDeniedHandlerImpl;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.xingyou5.model.security.service.UserService;
+import com.xingyou5.model.security.service.SecurityUserService;
 
 
 public class CustomAccessDeniedHandler implements AccessDeniedHandler{
@@ -26,7 +26,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler{
 
     private String errorPage;
     @Autowired
-    private UserService userService;
+    private SecurityUserService userService;
 
     //~ Methods ========================================================================================================
 

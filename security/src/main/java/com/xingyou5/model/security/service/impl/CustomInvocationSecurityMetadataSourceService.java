@@ -21,14 +21,15 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 import org.springframework.security.web.util.AntUrlPathMatcher;
 import org.springframework.stereotype.Service;
 
-import com.xingyou5.model.security.CompareMenuModel;
-import com.xingyou5.model.security.dao.mapper.UresourceMapper;
-import com.xingyou5.model.security.entity.Uresource;
+import com.xingyou5.model.user.CompareMenuModel;
+import com.xingyou5.model.user.dao.mapper.UresourceMapper;
+import com.xingyou5.model.user.entity.Uresource;
+import com.xingyou5.model.user.service.ResourceChangeNotifierService;
 
 
 @Service("customSecurityMetadataSource")
 public class CustomInvocationSecurityMetadataSourceService implements
-		FilterInvocationSecurityMetadataSource {
+		FilterInvocationSecurityMetadataSource,ResourceChangeNotifierService {
 
 	/**key：url <br>value：roleNames */
 	private static Map<String, Collection<ConfigAttribute>> resourceMap = null;
@@ -84,6 +85,7 @@ public class CustomInvocationSecurityMetadataSourceService implements
 		}
 		return null;
 	}
+	
 	@PostConstruct
 	public void init(){
 		//先加载资源权限
@@ -187,6 +189,11 @@ public class CustomInvocationSecurityMetadataSourceService implements
 			}
 		}
 		return menus;
+	}
+
+	@Override
+	public void onChange(Uresource resource) {
+		 init();
 	}
 	
 

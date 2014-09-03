@@ -9,7 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.xingyou5.model.security.entity.Urole;
+import com.xingyou5.model.user.entity.Urole;
+
 
 
 public class CustomUserDetails implements UserDetails, Serializable {

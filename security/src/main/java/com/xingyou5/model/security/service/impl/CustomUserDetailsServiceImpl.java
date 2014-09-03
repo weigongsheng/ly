@@ -9,10 +9,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.xingyou5.model.security.dao.mapper.UroleMapper;
-import com.xingyou5.model.security.dao.mapper.UserMapper;
-import com.xingyou5.model.security.entity.Urole;
-import com.xingyou5.model.security.entity.User;
+import com.xingyou5.model.security.CustomUserDetails;
+import com.xingyou5.model.user.dao.mapper.UroleMapper;
+import com.xingyou5.model.user.dao.mapper.UserMapper;
+import com.xingyou5.model.user.entity.Urole;
+import com.xingyou5.model.user.entity.User;
 
 
 @Service("customUserDetailsService")
