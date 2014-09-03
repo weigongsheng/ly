@@ -4,9 +4,10 @@ import java.util.Locale;
 
 import org.springframework.context.NoSuchMessageException;
 
-import com.ytoxl.module.core.common.utils.SpringContextUtils;
-import com.ytoxl.module.core.common.utils.StringUtils;
-import com.ytoxl.module.yipin.base.common.CodeConstants;
+import com.xingyou5.model.base.SpringContextUtils;
+import com.xingyou5.model.base.util.StringUtils;
+import com.xingyou5.model.user.CodeConstants;
+ 
 
 public class Message {	
 	private String code;

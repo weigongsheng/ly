@@ -66,7 +66,7 @@ public interface UserService {
 	 *            用户名
 	 * @return boolean true :非重复 false:重复
 	 * */
-	public boolean isDuplicateName(String username);
+	public boolean isDulplicateName(String username);
 
 	/**
 	 * 判断用户名是否重复 去除用户Id，一般编辑时使用

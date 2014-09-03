@@ -8,6 +8,15 @@
 	<name>5xinyou Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.5xingyou.model</groupId>
+			<artifactId>security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	
+	</dependencies>
+
 	<build>
 		<defaultGoal>compile</defaultGoal>
 		<finalName>5xinyou</finalName>

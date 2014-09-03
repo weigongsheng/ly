@@ -20,6 +20,9 @@ public class User extends UserTbl implements Serializable{
 	public User(User user) {
 		// TODO Auto-generated constructor stub
 	}
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	//----管理平台    END------//
 	public void setMenuModel(Uresource menuModel) {
 		// TODO Auto-generated method stub
