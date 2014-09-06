@@ -12,7 +12,7 @@
    </action>  
 </package>  
 
-	<package name="yipin-default" extends="struts-default">
+	<package name="5xinyou-default" extends="struts-default">
 		<result-types>
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
 			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
@@ -20,17 +20,13 @@
 		</result-types>
 		<interceptors>
 			<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor" />
-			<interceptor name="responseCacheInterceptor" class="com.ytoxl.yipin.web.interceptor.ResponseCacheInterceptor" />
-			<interceptor name="noResponseCacheInterceptor" class="com.ytoxl.yipin.web.interceptor.NoResponseCacheInterceptor" />
+			<interceptor name="responseCacheInterceptor" class="com.xinyou5.front.web.interceptor.ResponseCacheInterceptor" />
+			<interceptor name="noResponseCacheInterceptor" class="com.xinyou5.front.web.interceptor.NoResponseCacheInterceptor" />
 			<!-- <interceptor name="jcaptchaValidation" class="com.google.code.jcaptcha4struts2.core.interceptors.JCaptchaValidationIntercepter" /> -->
-			 
-			
-			 
-						
 		</interceptors>
 		
         
-        <default-action-ref name="acctionError"></default-action-ref>
+      <!--   <default-action-ref name="acctionError"></default-action-ref> -->
        
         <global-results>
         	<result name="jsonMsg" type="json">
@@ -50,11 +46,11 @@
         <action name="jcaptcha_image" class="com.google.code.jcaptcha4struts2.core.actions.JCaptchaImageAction">
 			<result type="captchaImage" />
 		</action> 
-         <action name="acctionError" >
+         <!-- <action name="acctionError" >
             <result>/WEB-INF/pages/error/404.jsp</result>
-        </action>  
+        </action>   -->
  
 	</package>
 	
-	 
+	 <include file="struts/struts-index.xml"></include>
 </struts>

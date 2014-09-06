@@ -16,7 +16,6 @@
 			
 			classpath*:/spring-yipinBase.xml,
 			classpath*:/spring-yipinFrontWeb.xml,
-			classpath*:/hessian-client.xml
 		</param-value>
 	</context-param>
 

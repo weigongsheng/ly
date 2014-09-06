@@ -10,5 +10,5 @@
 		<groupId>com.5xinyou</groupId>
 		<artifactId>5xyParent</artifactId>
 		<version>0.0.1</version>
-	</parent>
+</parent>
 </project>

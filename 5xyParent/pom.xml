@@ -7,6 +7,14 @@
   <name>5xyParent</name>
   <description>5xyParent</description>
 	<url>http://www.5xinyou.com</url>
+	
+	<modules>
+		<module>../base</module>
+		<module>../user</module>
+		<module>../security</module>
+	
+	</modules>
+	
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
 		<struts.version>2.3.15.1</struts.version>

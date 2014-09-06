@@ -14,7 +14,7 @@
 			<artifactId>security</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	
+
 	</dependencies>
 
 	<build>
@@ -26,8 +26,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
@@ -64,8 +64,8 @@
 						</connector>
 						<!-- <connector implementation="org.mortbay.jetty.ajp.Ajp13SocketConnector"> 
 							<port>8009</port> </connector> -->
-							
 					</connectors>
+					<reload>manual</reload>
 				</configuration>
 				<dependencies>
 					<dependency>
