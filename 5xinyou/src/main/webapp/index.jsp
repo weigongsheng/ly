@@ -37,7 +37,45 @@
    </div>
    
     <div class="xy_right_advr_box">
+   	<div class="xy_r_pro_headbox">
+   	<div class="xy_r_pro_headleft">
+   		<a href=""  >
+   		<span class="xy_r_pro_head1">￥:1988 </span>  
+   		</a>
+   	</div>
+   	<div class="xy_r_pro_headright">
+   		<a href=""  >
+   		<span class="xy_r_pro_head2">查看详情</span>
+   		</a>
+   	</div>
+   	</div>
    
+		        <ul class="jialun_left_pro_left_ula">
+		            <li class="jialun_left_pro_left_a_li">市场价</li>
+		            <li class="jialun_left_pro_left_a_li">折扣</li>
+		            <li class="jialun_left_pro_left_a_li">您节省</li>
+		        </ul>
+		        <ul class="jialun_left_pro_left_ulb">
+		            <li class="jialun_left_pro_left_b_li" style=" text-decoration: line-through;">￥1544</li>
+		            <li class="jialun_left_pro_left_b_li" style="color:#C03;">4.5</li>
+		            <li class="jialun_left_pro_left_b_li">￥846</li>
+		        </ul>
+		        <ul id="contdown_html_0" class="jialun_left_pro_left_ulc">
+		        <li class="jialun_left_pro_left_c_li"><img src="${_imagesPath}/pages/clock.png"  > </li>
+		            <li id="contdown_Day_0" class="jialun_left_pro_left_c_li">113</li>
+		            <li class="jialun_left_pro_left_c2_li">天</li>
+		            <li id="contdown_Houcre_0" class="jialun_left_pro_left_c_li">23</li>
+		            <li class="jialun_left_pro_left_c2_li">时</li>
+		            <li id="contdown_Me_0" class="jialun_left_pro_left_c_li">00</li>
+		            <li class="jialun_left_pro_left_c2_li">分</li>
+		            <li id="contdown_Min_0" class="jialun_left_pro_left_c_li">36</li>
+		            <li class="jialun_left_pro_left_c2_li">秒</li>
+		        </ul>
+		        <ul class="jialun_left_pro_left_uld">
+		            <li class="jialun_left_pro_left_da_li"><img src="${_imagesPath}/pages/countdown.gif" width="32" height="32" alt="ico"> </li>
+		            <li class="jialun_left_pro_left_d_li"><span style=" font-size:22px; font-weight:bold; color:#f60; ">308</span>人已购买<br>数量有限，下手要快哦！</li>
+		        </ul>
+		    
 	 </div>
     </div>
 			     
