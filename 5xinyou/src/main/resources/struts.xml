@@ -7,9 +7,9 @@
 
 <package name="home" namespace="/" extends="struts-default">  
    <default-action-ref name="index" />  
-   <action name="index" >  
-       <result name="success">/index.jsp</result>  
-   </action>  
+  <action name="index" class="com.xinyou5.front.web.action.IndexAction" method="index">
+			<result name="success">/index.jsp</result> 
+</action>  
 </package>  
 
 	<package name="5xinyou-default" extends="struts-default">
@@ -53,4 +53,5 @@
 	</package>
 	
 	 <include file="struts/struts-index.xml"></include>
+	 <include file="struts/struts-user.xml"></include>
 </struts>

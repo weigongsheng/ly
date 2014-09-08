@@ -10,7 +10,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.5xingyou.model</groupId>
+			<groupId>com.5xingyou.module</groupId>
 			<artifactId>security</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -58,6 +58,7 @@
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
 					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+					<webDefaultXml>src/test/resources/webdefault.xml</webDefaultXml>
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
 							<port>8080</port>

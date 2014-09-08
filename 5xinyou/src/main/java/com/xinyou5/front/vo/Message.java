@@ -4,9 +4,9 @@ import java.util.Locale;
 
 import org.springframework.context.NoSuchMessageException;
 
-import com.xingyou5.model.base.SpringContextUtils;
-import com.xingyou5.model.base.util.StringUtils;
-import com.xingyou5.model.user.CodeConstants;
+import com.xingyou5.module.base.SpringContextUtils;
+import com.xingyou5.module.base.util.StringUtils;
+import com.xingyou5.module.user.CodeConstants;
  
 
 public class Message {	

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="index" extends="5xinyou-default" namespace="/">
+	   <!-- 拒绝访问 -->
+        <action name="denied" class="com.xinyou5.front.web.action.IndexAction" method="accessdenied">
+        	<result name="success">/WEB-INF/pages/error/AccessDenied.jsp</result>
+        </action>
+		<!-- 显示注册登陆 -->
+		<action name="show-*" class="com.xinyou5.front.web.action.IndexAction" method="show">
+			<result name="success">/WEB-INF/pages/index/{1}.jsp</result>
+			<result name="fail">/index.jsp</result>
+			<result name="login">/index.jsp</result>
+		</action>
+	 
+		<action name="login" class="com.xinyou5.front.web.action.LoginAction" method="defaultIndex">
+			<result name="success">/WEB-INF/pages/login.jsp</result> 
+		</action>
+		<action name="loginSuccess" class="com.xinyou5.front.web.action.IndexAction" method="loginSuccessExecute"> 
+		
+		</action>
+		<!-- 验证码 -->
+		<action name="validationCode" class="com.google.code.jcaptcha4struts2.core.actions.JCaptchaImageAction">
+        	<result type="captchaImage"/>
+        </action>
+        <!-- 注册分为邮件 短信 -->
+        <action name="register-*" class="com.xinyou5.front.web.action.LoginAction" method="{1}">
+        	<result name="info">/WEB-INF/pages/index/perfectInfo.jsp</result>
+        </action>
+	 
+  
+   
+		 
+	 
+	 
+	</package>
+</struts>

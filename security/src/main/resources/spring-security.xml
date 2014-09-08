@@ -28,37 +28,36 @@
         <custom-filter ref="UserLoginSuccessAfterFilter" after="FILTER_SECURITY_INTERCEPTOR" />
 		<http-basic />
 	</http>
-    <beans:bean class="com.ytoxl.module.user.security.logoutHandler.RemoveSessionCacheLogoutSuccessHandler" id="removeSessionCacheLogoutSuccessHandler">
+    <beans:bean class="com.xingyou5.module.security.service.impl.RemoveSessionCacheLogoutSuccessHandler" id="removeSessionCacheLogoutSuccessHandler">
     	<beans:property name="logoutSuccessUrl" value="/index.htm"></beans:property>
     </beans:bean>
-    <beans:bean id="jCaptchaFilter" class="com.ytoxl.module.user.web.filter.JCaptchaFilter">
+    <beans:bean id="jCaptchaFilter" class="com.octo.captcha.component.filter.JCaptchaFilter">
         <beans:property name="captchaService" ref="imageCaptchaService"/>
         <beans:property name="failureUrl" value="/login.htm?error2"/>
         <beans:property name="mpCheckCode" value="${mpCheckCode}"/>
     </beans:bean>
     
     <!-- 登录成功后 操作类-->
-    <beans:bean id="customAuthenticationSuccessHandler" class="com.ytoxl.module.user.security.CustomAuthenticationSuccessHandler" >
+    <beans:bean id="customAuthenticationSuccessHandler" class="com.xingyou5.module.security.service.impl.CustomAuthenticationSuccessHandler" >
         <beans:constructor-arg value="/index.htm" />
         <beans:property name="customAlwaysUseDefTargUrl" value="${customAlwaysUseDefTargUrl}"/>
     </beans:bean>
     
     <!-- 拒绝访问操作类 -->
-    <beans:bean id="accessDeniedHandler" class="com.ytoxl.module.user.security.CustomAccessDeniedHandler" >
+    <beans:bean id="accessDeniedHandler" class="com.xingyou5.module.security.service.impl.CustomAccessDeniedHandler" >
         <beans:property name="errorPage" value="/login.htm?error3"/>
     </beans:bean>
     
     <!-- 用户成功登陆前后过滤 -->
-    <beans:bean id="UserLoginSuccessBeforeFilter" class="com.ytoxl.module.user.web.filter.UserLoginSuccessBeforeFilter" />
-    <beans:bean id="UserLoginSuccessAfterFilter" class="com.ytoxl.module.user.web.filter.UserLoginSuccessAfterFilter" >
+    <beans:bean id="UserLoginSuccessBeforeFilter" class="com.xingyou5.module.security.filter.UserLoginSuccessBeforeFilter" />
+    <beans:bean id="UserLoginSuccessAfterFilter" class="com.xingyou5.module.security.filter.UserLoginSuccessAfterFilter" >
         <beans:property name="failureUrl" value="/login.htm?error1"/>
         <beans:property name="filterProcessesUrl" value="/index.htm"/>
         <beans:property name="redirectUrl" value="${user.redirectUrl.url}"/>
-        <beans:property name="mpUserStatusCheck" value="${mpUserStatusCheck}"/>
     </beans:bean>
     
      <!-- 一个自定义的filter，必须包含authenticationManager,accessDecisionManager,securityMetadataSource三个属性。 -->
-    <beans:bean id="CustomFilterSecurityInterceptorImpl" class="com.ytoxl.module.user.security.CustomFilterSecurityInterceptorImpl">
+    <beans:bean id="CustomFilterSecurityInterceptorImpl" class="com.xingyou5.module.security.service.impl.CustomFilterSecurityInterceptorImpl">
         <beans:property name="authenticationManager" ref="autheticationManager" /><!-- 登陆的认证 -->
         <beans:property name="accessDecisionManager" ref="customAccessDecisionManager" /><!-- 资源访问决策 -->
         <beans:property name="securityMetadataSource" ref="customSecurityMetadataSource" /><!-- 资源和权限列表 -->

@@ -1,0 +1,88 @@
+#kinMaxShow
+ul {
+	width: 100px;
+	margin: 0 auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px
+}
+
+#kinMaxShow
+li {
+	background: url(../../images/banner_ico.png) no-repeat;
+	border: none;
+	background-color: none
+}
+
+#kinMaxShow li a:hover {
+	background: url(../../images/banner_ico.png) 16px 0 no-repeat;
+	border: none;
+	background-color: none
+}
+
+#kinMaxShow .kinMaxShow_button
+li.focus {
+	background: url(../../images/banner_ico_red.png) !important;
+	background-color: none;
+	border: none
+}
+
+#kinMaxShow
+li.focus {
+	background: url(../../images/banner_ico.png) 0 16px no-repeat;
+	background-color: none;
+	border: none
+}
+
+.kinMaxShow_button
+li.focus {
+	background: url(../../images/banner_ico.png) 0 16px no-repeat;
+	background-color: none;
+	border: none
+}
+
+
+.xy_adv_list {
+	margin-top: 15px;
+	background-color: #fff;
+	border: 1px solid #c0c0c0;
+	width: 960px;
+	display:table;
+	margin: 0 auto
+}
+
+.xy_adv_tip{
+	margin: 5px;
+	display: table;
+}
+ 
+.xy_adv_tip_title{
+	 width: 110px;
+	 float:left;
+	 margin-left: 2px;
+}
+.xy_adv_tip_title a{
+	font: normal normal bold 25px "宋体";
+	 color: rgb(197,24,48)
+}
+
+.xy_adv_tip_content{
+	 width: 830px;
+	 float: right;
+	 font: normal normal bold 22px "宋体";
+}
+
+.xy_product_info{
+	margin-top: 20px;
+	margin-left: 5px;
+}
+.xy_left_pic{
+	float: left;
+}
+.xy_right_advr_box{
+	float: right;
+	width:377px;
+	height:375px;
+	background: url("../../images/pages/pro_des_box.png");
+	margin-right: 5px;
+}

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xingyou5.module.user.dao.mapper.UserMapper">
+
+  <insert id="add" parameterType="User" keyProperty="userId" useGeneratedKeys="true">
+		insert into user(username,password,operateName,tel,email,status,createByUserId,createTime,updateTime,employCard,nickName,mark) values 
+	(#{username},#{password},#{operateName},#{tel},#{email},#{status},#{createByUserId},CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,#{employCard},#{nickName},#{mark});      
+  </insert>
+  
+  <select id="get" parameterType="integer" resultType="User">
+		select userId,username,password,operateName,tel,email,status,createByUserId,createTime,updateTime,employCard from user where  userId = #{userId}	
+  </select>
+  
+  <update id="update" parameterType="User">
+		update user set updateTime=CURRENT_TIMESTAMP
+		<if test="username!=null and username!=''">
+		    ,username=#{username} 
+		</if>
+		<if test="password!=null and password!=''">
+		    ,password=#{password} 
+		</if>
+		<if test="operateName!=null and operateName!=''">
+		    ,operateName=#{operateName}
+		</if>
+		<if test="tel!=null and tel!=''">
+		    ,tel=#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+		    ,email=#{email}
+		</if>
+		<if test="employCard!=null and employCard!=''">
+		    ,employCard=#{employCard}
+		</if>
+		where userId=#{userId} 
+		<if test="updateTime!=null and updateTime!=''">
+		   and updateTime=#{updateTime}
+		</if>
+  </update>
+  
+  <delete id="del" parameterType="integer">
+        delete from user where userId=#{userId}
+  </delete>
+  
+  <!-- 根据用户Id 更新密码 -->
+  <update id="updatePswByUserId" >
+		update user set updateTime=CURRENT_TIMESTAMP,password=#{password} where userId=#{userId}
+  </update>
+  
+   <!-- 根据username获取userId-->
+  <select id="getUserIdByUserName" parameterType="string" resultType="integer">
+		select userId from user where  username = #{username}	
+  </select>
+  
+  <!-- 根据username获取user-->
+  <select id="getByName" parameterType="string" resultType="User">
+		select userId,username,password,operateName,tel,email,status,createByUserId,createTime,updateTime,employCard from user  where  username = #{username}	
+  </select>
+  
+  <!-- 通过用户名查找服务中的用户信息-->
+  <select id="getAbleUserByName" parameterType="string" resultType="User">
+		select userId,username,password,operateName,tel,email,status,createByUserId,createTime,updateTime,employCard,nickName from user  
+		where  username = #{username}	and status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+  </select>
+  
+  <!-- 查询用户-->
+  <select id="searchUsers" parameterType="Map" resultType="User">
+		select u.userId,u.username,u.operateName,u.tel,u.email ,u.lastLoginTime,u.employCard
+        from user u
+        where status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+        <if test="createByUserIds!=null and createByUserIds.size()>0">
+          and  u.userId in
+          <foreach collection="createByUserIds" item="createByUserId"  open="(" separator="," close=")">  
+             #{createByUserId}  
+          </foreach>  
+        </if>
+        <if test="username!=null and username!=''">
+          and  (u.username like concat('%',#{username},'%') or u.operateName like concat('%',#{username},'%') or u.tel like concat('%',#{username},'%') )
+        </if>
+		<if test="sort != null and sort != ''">
+			order by ${sort}	
+			<if test="dir != null and dir != ''">
+				${dir}	
+			</if>
+		</if>
+		limit #{start},#{limit}	
+  </select>
+  <select id="searchUsersCount" parameterType="Map" resultType="Integer">
+		select count(u.userId) 
+               from user u
+        where status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+        <if test="createByUserIds!=null and createByUserIds.size()>0">
+          and  u.userId in
+          <foreach collection="createByUserIds" item="createByUserId"  open="(" separator="," close=")">  
+             #{createByUserId}  
+          </foreach>  
+        </if>
+        <if test="username!=null and username!=''">
+           and  (u.username like concat('%',#{username},'%') or u.operateName like concat('%',#{username},'%') or u.tel like concat('%',#{username},'%') )
+        </if>
+  </select>
+  
+  <!-- 通过状态  创建用户Id 获取其子用户Id -->
+  <select id="listUserIdByCUserId"  resultType="integer">
+		select userId from user 
+		where  createByUserId = #{userId}	and status=#{status} 
+  </select>
+  
+ 
+  <!-- 删除指定用户的用户角色-->
+  <delete id="delUserUroleByUserId" >
+		delete from user_urole where userId=#{userId}                    
+  </delete>
+  
+  <!-- 批量新增用户角色-->
+  <insert id="addUserUroles"  keyProperty="userUroleId" useGeneratedKeys="true">
+		insert into user_urole(userUroleId,userId,uroleId) values 
+		 <foreach collection="uroleIds" item="uroleId" index="index" separator=",">
+		(#{userUroleId},#{userId},#{uroleId})
+		 </foreach>                  
+  </insert>
+  
+  <!-- 根据用户Ids 更新用户状态 -->
+  <update id="updateStatusByUserIds" >
+		update user set status=#{status} 
+        where   userId in
+        <foreach collection="userIds" item="userId"  open="(" separator="," close=")">  
+             #{userId}  
+        </foreach>  
+  </update>
+  
+  <!-- 更新最近登录时间 -->
+  <update id="updateLastLoginTimeByUserId" parameterType="integer">
+		update user set lastLoginTime=CURRENT_TIMESTAMP ,updateTime=CURRENT_TIMESTAMP
+        where   userId=#{userId}  
+  </update>
+  
+  <!-- 根据email获取userId-->
+  <select id="getUserIdByEmail" parameterType="string" resultType="integer">
+		select userId from user where  email = #{email}	
+  </select>
+  
+  <!-- 根据userId获取创建用户Id-->
+  <select id="getCreateUserIdByUserId" parameterType="Integer" resultType="Integer">
+		select createByUserId from user where  userId=#{userId}  
+  </select>
+  
+  <!-- 根据username获取用户状态-->
+  <select id="getStatusByUsername" parameterType="String" resultType="Integer">
+		select status from user where  username=#{username}  
+  </select>
+  
+  
+  
+    <!-- 查询用户-->
+  <select id="searchByName" parameterType="Map" resultType="User">
+		select u.userId,u.username,u.operateName,u.tel,u.email ,u.lastLoginTime,u.employCard
+        from user u
+        where status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+        <if test="createByUserIds!=null and createByUserIds.size()>0">
+          and  u.userId in
+          <foreach collection="createByUserIds" item="createByUserId"  open="(" separator="," close=")">  
+             #{createByUserId}  
+          </foreach>  
+        </if>
+        <if test="username!=null and username!=''">
+          and  u.username like concat('%',#{username},'%')
+        </if>
+        <if test="operateName!=null and operateName!=''">
+          and  u.operateName like concat('%',#{operateName},'%')
+        </if>
+        <if test="tel!=null and tel!=''">
+          and  u.tel like concat('%',#{tel},'%')
+        </if>
+        <if test="email!=null and email!=''">
+          and  u.email like concat('%',#{email},'%')
+        </if>
+		<if test="sort != null and sort != ''">
+			order by ${sort}	
+			<if test="dir != null and dir != ''">
+				${dir}	
+			</if>
+		</if>
+		limit #{start},#{limit}	
+  </select>
+  <select id="searchByNameCount" parameterType="Map" resultType="Integer">
+		select count(u.userId) 
+               from user u
+        where status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+        <if test="createByUserIds!=null and createByUserIds.size()>0">
+          and  u.userId in
+          <foreach collection="createByUserIds" item="createByUserId"  open="(" separator="," close=")">  
+             #{createByUserId}  
+          </foreach>  
+        </if>
+        <if test="username!=null and username!=''">
+          and  u.username like concat('%',#{username},'%')
+        </if>
+        <if test="operateName!=null and operateName!=''">
+          and  u.operateName like concat('%',#{operateName},'%')
+        </if>
+        <if test="tel!=null and tel!=''">
+          and  u.tel like concat('%',#{tel},'%')
+        </if>
+        <if test="email!=null and email!=''">
+          and  u.email like concat('%',#{email},'%')
+        </if>
+  </select>
+    <!-- 查询用户-->
+  <select id="listAbleUserModel" resultType="User">
+		select u.userId,u.username,u.operateName,u.tel,u.email ,u.lastLoginTime,u.employCard,u.createTime,u.updateTime
+        from user u
+        where status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+  </select>
+  
+  <!-- 根据username获取userId-->
+  <select id="getAbleUserIdByemployCard" parameterType="String" resultType="Integer">
+		select userId from user where  employCard = #{employCard} and status=${@com.xingyou5.module.user.entity.User@STATUS_ABLE} 
+  </select>
+  
+    <!-- 根据username 更新密码 -->
+  <update id="updatePswByUserName" >
+		update user set updateTime=CURRENT_TIMESTAMP,password=#{password} where username=#{userName}
+  </update>
+  
+  
+      <!-- 根据密码查找用户id A计划使用，email=uuid -->
+  <select id="selectUidByEmail" resultType="int"  parameterType="string">
+		select userId from user where email=#{uuid}
+  </select>
+  
+   <!-- 根据用户Id 更新密码 -->
+  <update id="updateEmailByUserName" >
+		update user set updateTime=CURRENT_TIMESTAMP,email=#{email} where userName=#{userName}
+  </update>
+  
+  <!-- 根据用户Id 查找qq登录的用户信息-->
+	  <select id="getUserByUserId" parameterType="integer" resultType="User">
+			select userId,username,password,operateName,tel,email,status,createByUserId,createTime,updateTime,employCard from user where  userId = #{userId} AND mark=${@com.xingyou5.module.user.entity.User@MARK_QQ}
+	  </select> 
+  
+</mapper>
