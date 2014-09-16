@@ -160,3 +160,8 @@ body{
 	margin: 0 auto;
 	width: 276px;
 }
+.copyright{
+	width: 960px;
+	margin:10px auto; 
+	font-family: "微软雅黑";
+}

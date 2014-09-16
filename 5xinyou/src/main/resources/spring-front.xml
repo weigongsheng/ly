@@ -31,10 +31,6 @@
             <list>
                 <!--相同的键会优先取上面的配置文件  -->
                 <value>messages</value>
-                <value>exceptions_yipinBase</value>
-                <value>exceptions_yipinContent</value>
-                <value>exceptions_yipinOrder</value>
-                <value>exceptions_yipinFrontWeb</value>
             </list>
         </property>        
     </bean>

@@ -103,8 +103,9 @@
 		</div>
 		<!--登陆 end-->
 			 </div>
-	<!--内容部分 end-->
-	<%@include file="/WEB-INF/pages/include/foot.jsp"%>
+	 <div class="copyright"  >
+	  <spring:message code="copyright"></spring:message>
+	 </div>
 <script type="text/javascript" src="${_jsPath }/jquery/jquery-1.8.1.js"></script>
 <script type="text/javascript"	src="${_jsPath }/plugin/formvalidator/formValidator-4.1.3.js"></script>
 <script type="text/javascript"	src="${_jsPath }/plugin/plugin.js"></script>
