@@ -30,6 +30,8 @@ public class JCaptchaFilter implements Filter {
 	
 	public static final String MPCHECKCODE = "1";//1:管理平台使用，验证码校验
 	
+	
+	
 	// 默认值定义
 	public static final String DEFAULT_FILTER_PROCESSES_URL = "/j_spring_security_check";
 	public static final String DEFAULT_CAPTCHA_PARAMTER_NAME = "j_captcha";
@@ -43,8 +45,17 @@ public class JCaptchaFilter implements Filter {
 	private String captchaParamterName = DEFAULT_CAPTCHA_PARAMTER_NAME;
 	private String autoPassValue;
 	private String mpCheckCode;
+	
+	private boolean enable=true;
 
 	
+	public boolean isEnable() {
+		return enable;
+	}
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
 
 	/**
 	 * Filter回调初始化函数.
@@ -58,7 +69,7 @@ public class JCaptchaFilter implements Filter {
 			ServletException {
 		HttpServletRequest request = (HttpServletRequest) theRequest;
 		HttpServletResponse response = (HttpServletResponse) theResponse;
-		String servletPath = request.getServletPath();
+		String servletPath = request.getServletPath();request.getParameterMap();
 		// 符合filterProcessesUrl为验证处理请求,其余为生成验证图片请求.
 		if (StringUtils.startsWith(servletPath, filterProcessesUrl)) {
 			boolean validated = validateCaptchaChallenge(request);
@@ -85,7 +96,12 @@ public class JCaptchaFilter implements Filter {
 	 */
 	protected boolean validateCaptchaChallenge(final HttpServletRequest request) {
 		try {
-			Object loginErrorTimes = request.getSession().getAttribute(CodeConstants.LOGIN_ERROR);
+			if(!isEnable()){
+				return true;
+			}
+			if(!needValidateCode(request)){
+				return true;
+			}
 			String captchaID = request.getSession().getId();
 			logger.debug("captchaID:" + captchaID);
 			String challengeResponse = request
@@ -96,14 +112,19 @@ public class JCaptchaFilter implements Filter {
 					&& autoPassValue.equals(challengeResponse)) {
 				return true;
 			}
-			if(MPCHECKCODE.equals(mpCheckCode)&&(loginErrorTimes==null || Integer.valueOf(loginErrorTimes.toString()) < 2))
-				return true;
 			return captchaService.validateResponseForID(captchaID,
 					challengeResponse);
 		} catch (CaptchaServiceException e) {
 			logger.error(e.getMessage(), e);
 			return false;
 		}
+		
+		
+	}
+
+	private boolean needValidateCode(HttpServletRequest request) {
+		Object loginErrorTimes = request.getSession().getAttribute(CodeConstants.LOGIN_ERROR);
+		return loginErrorTimes!=null && Integer.valueOf(loginErrorTimes.toString()) < 2;
 	}
 
 	/**

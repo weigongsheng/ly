@@ -34,4 +34,12 @@ public class CodeConstants {
 	public static final String I_SEND_EMAIL_SUCCESS = "I_SEND_EMAIL_SUCCESS";//发送EMAIL成功
 	public static final String I_SEND_EMAIL_FAILURE = "I_SEND_EMAIL_FAILURE";//发送EMAIL失败，未知错误
 	public static final String I_SEND_CODECHECK_FAILURE = "I_SEND_CODECHECK_FAILURE";//验证码错误
+	
+	
+	public static void main(String[] args) {
+		boolean f=true;
+		if(f) 
+			System.out.println();
+		 
+	}
 }
