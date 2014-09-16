@@ -386,8 +386,9 @@ a:active {
 .xingyou_server {
 	float: right;
 	margin-top: 20px;
-	margin-right:-8px;
-	height: 60px
+	margin-right:-2px;
+	height: 60px;
+	font-size: 12px;
 }
 .xingyou_slogan {
 	float: left;
@@ -398,11 +399,11 @@ a:active {
 
 .xingyou_server ul
 li {
-	margin: 15px 0;
-	padding: 10px;
-	font-size:18px;
+	margin: 17px 0;
+	padding: 5px;
 	font-weight:bold;
-	float: left
+	float: left;
+	line-height: 22px
 }
 
 .xingyou_nav {

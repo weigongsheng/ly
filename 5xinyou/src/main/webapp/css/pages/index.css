@@ -114,8 +114,16 @@ li.focus {
 	height: 74px;
 	color: #fff;
 	line-height: 85px;
-	font-size: 22px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-family: "微软雅黑";
+}
+.rmb {
+	height: 74px;
+	color: #fff;
+	line-height: 85px;
+	font-size: 27px;
+	font-family: "微软雅黑";
+	padding-left: 22px
 }
 
 .jialun_left_pro_left_ula {

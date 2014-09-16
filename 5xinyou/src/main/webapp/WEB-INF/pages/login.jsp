@@ -60,17 +60,13 @@
 							title="忘记密码了">忘记密码了？</a>
 					</form>
 				</div>
-				<form id="true_form" action="${_ctxPath}/j_spring_security_check"
-					style="display: none;" method="post">
-					<input type="text" id="tname" name="j_username"> <input
-						name="j_password" id="tpassword" type="password"> <input
-						type="checkbox" id="remberMe" name="_spring_security_remember_me">
+				<form id="true_form" action="${_ctxPath}/j_spring_security_check" style="display: none;" method="post">
+					<input type="text" id="tname" name="j_username">
+					<input name="j_password" id="tpassword" type="password">
+					<input type="checkbox" id="remberMe" name="_spring_security_remember_me">
 				</form>
 
 			</div>
-			<%-- <div class="login_right fn_right">
-				<a href="javascript:"><img src="${_imagesPath}/register/banner.jpg" alt="广告" /></a>
-			</div> --%>
 		</div>
 		<!--登陆 end-->
 	</div>

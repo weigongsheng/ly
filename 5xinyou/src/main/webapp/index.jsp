@@ -15,32 +15,32 @@
 
 	<div class="kinMaxWrapper" style="margin:0 auto;width:960px;">
 	<div id="kinMaxShow" class="xinoyou_lunbo" style="height:auto;">
-		<div><a href="" target="_blank" ><img src="${_imagesPath}/product/p1.jpg"/></a></div>
-		<div><a href="" target="_blank" ><img src="${_imagesPath}/product/p2.jpg"/></a></div>
-		<div><a href="" target="_blank" ><img src="${_imagesPath}/product/p3.png"/></a></div>
-	</div>
+		<div><a href="" target="_blank" ><img class="lunbo" src="${_imagesPath}/product/p001.jpg"/></a></div>
+		<div><a href="" target="_blank" ><img class="lunbo" src="${_imagesPath}/product/p002.jpg"/></a></div>
+		<div><a href="" target="_blank" ><img class="lunbo" src="${_imagesPath}/product/p003.jpg"/></a></div>
+	</div> 
    </div>
-   <c:forEach items="${advList}" var="curAdv">
+   <c:forEach items="${advList}" var="curAdv" varStatus="pIndex">
    <div class="xy_adv_list" style="margin-top:15px;">
     <div class="xy_adv_tip" >
      <div class="xy_adv_tip_title">
      	<a href="">东方明珠</a>
      </div>
-     <div class="xy_adv_tip_content">${curAdv }--
+     <div class="xy_adv_tip_content">
      【常州 奥阳华美达】2天1晚双人自由行 中华恐龙园+3大景点门票，1加仑全部奉上!仅698元，享原价1544元常州奥阳华美达大酒店高级双床房1晚+精美自助早餐2份+常州恐龙园门票2张+首日赠送大林寺景区门票2张+白龙
      </div>
     </div>
     <div class="xy_product_info" >
     
    <div class="xy_left_pic">
-   	<img alt="" src="${_imagesPath}/product/p1_left.jpg" width="562" height="357">
+   	<img alt="" src="${_imagesPath}/product/pleft_00${pIndex.index}.jpg" width="562" height="357">
    </div>
    
     <div class="xy_right_advr_box">
    	<div class="xy_r_pro_headbox">
    	<div class="xy_r_pro_headleft">
    		<a href=""  >
-   		<span class="xy_r_pro_head1">￥:1988 </span>  
+   		<span class="xy_r_pro_head1"><span class="rmb">￥</span>1988 </span>  
    		</a>
    	</div>
    	<div class="xy_r_pro_headright">
@@ -72,7 +72,6 @@
 		            <li class="jialun_left_pro_left_c2_li">秒</li>
 		        </ul>
 		        <ul class="jialun_left_pro_left_uld">
-		            <li class="jialun_left_pro_left_da_li"><img src="${_imagesPath}/pages/countdown.gif" width="32" height="32" alt="ico"> </li>
 		            <li class="jialun_left_pro_left_d_li"><span style=" font-size:22px; font-weight:bold; color:#f60; ">308</span>人已购买<br>数量有限，下手要快哦！</li>
 		        </ul>
 		    
@@ -88,7 +87,7 @@
 <script type="text/javascript" src="${_jsPath }/pages/index.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$("#kinMaxShow").kinMaxShow({height:445});
+		$("#kinMaxShow").kinMaxShow({height:360});
 	});
 </script>
 	<%@ include file="/WEB-INF/pages/include/foot.jsp"%>

@@ -13,8 +13,13 @@
         </div>
         <div class="xingyou_server">
            <ul>
-            	<li><a href="${_ctxPath}/login.htm">登录</a></li>
+            	<li><s:if test="#session['SPRING_SECURITY_CONTEXT'].authentication.principal  !=null">您好
+            	&nbsp;${session['SPRING_SECURITY_CONTEXT'].authentication.principal.username }
+                <li><a href="${_ctxPath}/j_spring_security_logout">退出</a></li>
+            	</s:if><s:else>
+            	<a href="${_ctxPath}/login.htm">登录</a>
                 <li><a href="">注册</a></li>
+            	</s:else></li>
                 <li  ><a href=""><img src="${_imagesPath}/phone.png"  ></a> <a href="" style="font-size: 16px;">400-8222-1457</a></li>
             </ul>
         </div>

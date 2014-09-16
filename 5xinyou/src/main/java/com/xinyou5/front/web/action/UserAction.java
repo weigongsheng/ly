@@ -255,7 +255,8 @@ public class UserAction extends BaseAction {
 					return JSONMSG;
 				}
 			}
-			/*
+			/*ClGbo0zEHtLGKAvyMOEWvQ==  
+			 * l1lAre2C7oXOtTmPC/jPKg==
 			 * List<Integer> roles =
 			 * uroleService.listNormalUroleIdsByUserId(user.getUserId());
 			 * if(!roles.contains(UserInfo.USER_ROLE_BUYER)){
