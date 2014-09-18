@@ -58,6 +58,23 @@ body{
 	line-height: 52px;
 }
 
+.onError {
+	position: absolute;
+	top: -23px;
+	right: 0;
+}
+
+.onError-txt {
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	display: block;
+	border: 1px solid #ffc67d;
+	border-bottom: 0;
+	padding: 0 18px 0 40px;
+	background: #fff4e5 url("../../images/register/form_error.png?v=1") 10px center no-repeat;
+}
+
 .login_bd .tip{
 	margin-top: 22px;
 	text-align: center;
@@ -77,6 +94,7 @@ body{
 }
 
 .logreg-text{
+	position:relative;
 	padding-left:35px;
 	height: 42px;
 	width:240px;
@@ -134,6 +152,7 @@ body{
  }
  
  .vc_cont{
+ 	position:relative;
  	width: 277px;
  	margin: 0 auto;
  }
@@ -157,11 +176,8 @@ body{
 }
 
 .quick-link{
+	position:relative;
 	margin: 0 auto;
 	width: 276px;
 }
-.copyright{
-	width: 960px;
-	margin:10px auto; 
-	font-family: "微软雅黑";
-}
+#cheboxTKTip{color:#f00;padding-left:5px;display:none; }

@@ -32,7 +32,9 @@ public class IndexAction extends BaseAction{
 		return advList;
 	}
 	
-	
+	public String regist(){
+		return "toRegist";
+	}
 	
 	
 }

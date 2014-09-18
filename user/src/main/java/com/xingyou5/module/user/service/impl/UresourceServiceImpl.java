@@ -172,7 +172,6 @@ public class UresourceServiceImpl implements UresourceService {
 	 * */
 	public Uresource getAllMenuModel(){
 		return null;
-//		return (Uresource)CloneObject.clone(CustomInvocationSecurityMetadataSourceService.getAllMenuModel());
 	}
 
 

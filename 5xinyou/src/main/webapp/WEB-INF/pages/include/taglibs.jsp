@@ -6,4 +6,5 @@
 <%@	taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="cache" uri="http://www.opensymphony.com/oscache"%>
+<%-- <%@ taglib prefix="xy" tagdir="/WEB-INF/tags"%> --%>
 <%@ page trimDirectiveWhitespaces="true"%>

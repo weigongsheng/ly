@@ -35,39 +35,7 @@
 		 <action name="resetpassword" class="com.xinyou5.front.web.action.UserAction" method="resetPassword">
         	<result name="passWordStep3">/WEB-INF/pages/user/passWordstep3.jsp</result>
         </action>
-      <!--   <action name="regMail-*" class="com.xinyou5.front.web.action.UserRegMailAction" method="{1}">
-			<result name="mailSendSuccess" type="redirectAction">
-				<param name="actionName">regMail-mailConfirm</param>
-				<param name="namespace">/user</param>
-				<param name="toMail">${toMail}</param>
-			</result>
-			<result name="mailConfirmSkip">/WEB-INF/pages/index/mailConfirm.jsp</result>
-			<result name="mailSuccessSkip">/WEB-INF/pages/index/mailSuccess.jsp</result>
-			<result name="mailErrorSkip">/WEB-INF/pages/index/mailError.jsp</result>
-		</action> -->
-		<!-- 积分分页 -->
-	<!-- 	<action name="points-*-*-*" class="com.xinyou5.front.web.action.PointAction" method="searchPoints">
-			<param name="pointPage.params.queryTime">{1}</param>
-			<param name="pointPage.total">{2}</param>
-			<param name="pointPage.currentPage">{3}</param>
-			<result name="success" >/WEB-INF/pages/user/pointManage.jsp</result>
-		</action> -->
-	 
-        <!-- 服务条款 -->
-		<action name="serviceTerms"  class="com.xinyou5.front.web.action.UserAction" method="getServiceTerms">
-			<result name="getServiceTerms">/WEB-INF/pages/user/serviceTerms.jsp</result>
-		</action>
-		
-		<action name="message-*-*-*-*" class="com.xinyou5.front.web.action.MessageCenterAction" method="{1}">
-			<param name="messagePage.params.status">{2}</param>
-			<param name="messagePage.total">{3}</param>
-			<param name="messagePage.currentPage">{4}</param>
-		
-			<result name="messageList">/WEB-INF/pages/user/messageCenter.jsp</result>
-		</action>
-		
-		<action name="message-*" class="com.xinyou5.front.web.action.MessageCenterAction" method="{1}">		
-			<result name="messageList">/WEB-INF/pages/user/messageCenter.jsp</result>
-		</action>
+ 
+       
 	</package>
 </struts>

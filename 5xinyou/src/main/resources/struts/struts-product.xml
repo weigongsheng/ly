@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="product" extends="5xinyou-default" namespace="/p">
+		 
+		
+		<action name="product-*" class="com.xinyou5.front.web.action.ProductAction" method="{1}">		
+			<result name="detail">/WEB-INF/pages/product/product_detail.jsp</result>
+			<result name="list">/WEB-INF/pages/product/product_list.jsp</result>
+		</action>
+	</package>
+</struts>

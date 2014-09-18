@@ -7,22 +7,7 @@
 
  <div class="xingyou_logo_bg">
     <div class="xingyou_logo_nav">
-        <div class="xingyou_logo"><a href="${_contextPath}"><img src="${_imagesPath}/logo.png"></a></div>
-        <div class="xingyou_slogan">
-        	<img alt="" src="${_imagesPath}/slogan.png">
-        </div>
-        <div class="xingyou_server">
-           <ul>
-            	<li><s:if test="#session['SPRING_SECURITY_CONTEXT'].authentication.principal  !=null">您好
-            	&nbsp;${session['SPRING_SECURITY_CONTEXT'].authentication.principal.username }
-                <li><a href="${_ctxPath}/j_spring_security_logout">退出</a></li>
-            	</s:if><s:else>
-            	<a href="${_ctxPath}/login.htm">登录</a>
-                <li><a href="">注册</a></li>
-            	</s:else></li>
-                <li  ><a href=""><img src="${_imagesPath}/phone.png"  ></a> <a href="" style="font-size: 16px;">400-8222-1457</a></li>
-            </ul>
-        </div>
+         <%@ include file="/WEB-INF/pages/include/topHead.jsp" %>
         <div class="xingyou_nav">
             <ul class="xingyou_nav_ula">
             	            <li class="xingyou_nav_ula_li">

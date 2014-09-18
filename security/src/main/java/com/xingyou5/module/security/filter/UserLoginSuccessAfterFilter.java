@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.xingyou5.module.security.CustomUserDetails;
+import com.xingyou5.module.security.service.impl.CustomInvocationSecurityMetadataSourceService;
 import com.xingyou5.module.user.CodeConstants;
 import com.xingyou5.module.user.UserVo;
 import com.xingyou5.module.user.entity.Uresource;
@@ -52,7 +52,7 @@ public class UserLoginSuccessAfterFilter implements Filter {
 	    	  try {
 					UserVo userDetails = securityService.getCurrentUser();
 					//设置菜单
-					Uresource menuDetail = uresourceService.getAllMenuModel();
+					Uresource menuDetail = CustomInvocationSecurityMetadataSourceService.getAllMenuModel();
 					List<Urole> uroles = userDetails.getUroles();
 					if(uroles!=null){
 						List<Integer> roles = new ArrayList<Integer>();
@@ -86,8 +86,7 @@ public class UserLoginSuccessAfterFilter implements Filter {
 					Object username_repeat = request.getSession().getAttribute(CodeConstants.LOGIN_ERROR_ONE);
 					if(username_repeat!=null){
 						request.getSession().removeAttribute(CodeConstants.LOGIN_ERROR_ONE);
-						boolean repeat = userService.isDulplicateName(String.valueOf(username_repeat));
-						if(repeat){
+						if(!userService.existName(String.valueOf(username_repeat))){
 							response.sendRedirect(request.getContextPath() + failureUrl);
 						}else{
 							Integer status = userService.getStatusByUsername(String.valueOf(username_repeat));

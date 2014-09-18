@@ -521,7 +521,7 @@ public class UserAction extends BaseAction {
 				} catch (IOException e) {
 					logger.error("验证密码解密失败", e);
 				}
-				if (userService.isDulplicateName(username)) {
+				if (userService.existName(username)) {
 					setMessage(Boolean.FALSE.toString(), "该用户不存在");
 				} else {
 					User user = userService.getByName(username);

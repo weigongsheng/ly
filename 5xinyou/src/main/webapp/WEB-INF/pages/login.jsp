@@ -12,35 +12,14 @@
 <body>
 	 
 <div class="loginBody" >
-	
-    <div class="xingyou_logo_nav">
-        <div class="xingyou_logo"><a href="${_contextPath}"><img src="${_imagesPath}/logo.png"></a></div>
-        <div class="xingyou_slogan">
-        	<img alt="" src="${_imagesPath}/slogan.png">
-        </div>
-        <div class="xingyou_server">
-           <ul>
-            	<li><s:if test="#session['SPRING_SECURITY_CONTEXT'].authentication.principal  !=null">您好
-            	&nbsp;${session['SPRING_SECURITY_CONTEXT'].authentication.principal.username }
-                <li><a href="${_ctxPath}/j_spring_security_logout">退出</a></li>
-            	</s:if><s:else>
-            	<a href="${_ctxPath}/login.htm">登录</a>
-                <li><a href="">注册</a></li>
-            	</s:else></li>
-                <li  ><a href=""><img src="${_imagesPath}/phone.png"  ></a> <a href="" style="font-size: 16px;">400-8222-1457</a></li>
-            </ul>
-        </div>
-    </div>
- 
-	 
-	<div class="span-div"></div> 
+	 <%@include file="/WEB-INF/pages/include/miniHead.jsp"  %>
 <div class="login">
 	 <div class="inptCont">
 	  <div style="float: left;width: 200px;height: 300px"></div>
 				<div class="login_bd">
 					<div class="loginTip">请登录</div>
 					<div class="tip"> 
-					  <span class="welCome">欢迎来到5星游！</span><span><a href="" class="regist" >注册</a></span>
+					  <span class="welCome">欢迎来到5星游！</span><span><a href="${_ctxPath}/regist.htm" class="regist" >注册</a></span>
 					</div>
 					<div class="inputBody ">
 					<form action="" method="post" id="login_form">
@@ -60,13 +39,12 @@
 						</div>
 						<div style="display: none; " id="codeDiv" class="inputDiv">
 							 <div class="vc_cont" >
-								<input type="text" class="input-vc" data-default="请输入验证码"
+								<input type="text" class="input-vc" placeholder="请输入验证码"
 									name="jCaptchaResponse" id="authCode" autocomplete="off" />
 									 
 									<img class="yzmImg"  onclick="nextValidateCode('imgLogin');" 
 									style="width: 105px; height:42px;cursor: pointer; margin-top: 0;"
 									alt="验证码" id="imgLogin" src="${_ctxPath}/validationCode.htm">
-									 
 							 </div>
 							 
 						</div>
@@ -87,8 +65,8 @@
 						 <a style='color: black;'
 							href="${_ctxPath}/user/user-findPassWord${_requestPath}"
 							title="忘记密码了">忘记密码了</a>|<a style='color: #c5192f;'
-							href="${_ctxPath}/user/user-findPassWord${_requestPath}"
-							title="忘记密码了">免费注册</a>
+							href="${_ctxPath}/regist.htm"
+							title="免费注册">免费注册</a>
 						 </div>
 				</div>
 				<form id="true_form" action="${_ctxPath}/j_spring_security_check" style="display: none;" method="post">

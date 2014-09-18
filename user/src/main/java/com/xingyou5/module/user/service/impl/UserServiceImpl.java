@@ -51,9 +51,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean isDulplicateName(String username) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean existName(String username) {
+		Integer userId = userMapper.getUserIdByUserName(username);
+		return userId != null && userId != 0 ;
 	}
 
 	@Override

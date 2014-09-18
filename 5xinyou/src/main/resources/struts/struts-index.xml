@@ -18,6 +18,9 @@
 		<action name="login" class="com.xinyou5.front.web.action.LoginAction" method="defaultIndex">
 			<result name="success">/WEB-INF/pages/login.jsp</result> 
 		</action>
+		<action name="regist" class="com.xinyou5.front.web.action.LoginAction" method="defaultRegist">
+			<result name="success">/WEB-INF/pages/register.jsp</result> 
+		</action>
 		<action name="loginSuccess" class="com.xinyou5.front.web.action.IndexAction" method="loginSuccessExecute"> 
 		
 		</action>
