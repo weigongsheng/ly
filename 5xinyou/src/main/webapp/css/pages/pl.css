@@ -1,0 +1,271 @@
+.pl_kind_box {
+	clear: both;
+	line-height: 40px;
+	width: 960px;
+	margin: 10px auto;
+	border: 1px solid #d0d0d0;
+	background-color: #FFF;
+	overflow: auto;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.xy_class_box_cla_newprobox {
+	clear: both;
+	line-height: 40px;
+	width: 960px;
+	margin: 10px auto;
+	border: 1px solid #d0d0d0;
+	background-color: #FFF;
+	overflow: auto;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.xy_class_box_cla_box_newprobox {
+	padding: 0;
+	line-height: 40px;
+	height: auto;
+	height: auto;
+	min-height: 32px;
+}
+
+.xy_newproduct_list_left_box {
+	float: left;
+}
+
+.xy_class_box_cla_box_ul_new {
+	line-height: 40px;
+	margin-left: 6px;
+}
+
+ul,ol,li {
+	list-style: none;
+}
+
+.xy_newproduct_list_left {
+	float: left;
+	color: #000;
+	font-weight: bold;
+	line-height: 26px;
+	text-align: right;
+}
+
+.show_all {
+	float: left;
+	display: inline;
+	width: 880px;
+	height: auto;
+	overflow: hidden;
+}
+
+.show_all_ul_li {
+	float: left;
+	height: 30px;
+	line-height: 28px;
+	width: 110px;
+	padding: 3px 0;
+}
+
+/* .pt,.ptSelected{
+	font:normal bold 15px "微软雅黑";
+} */
+a.pt:link,a.pt:visited,a.pt:active {
+	float: left;
+	display: block;
+	color: #000;
+	height: 28px;
+	width: 110px;
+	text-align: center;
+}
+
+a.pt:HOVER {
+	background-color: #FD95A2;
+}
+
+a.ptSelected:link,a.ptSelected:visited,a.ptSelected:active,a.ptSelected:hover
+	{
+	text-align: center;
+	float: left;
+	display: block;
+	color: #fff;
+	height: 30px;
+	width: 110px;
+	background-color: #FB586E;
+	height: 28px;
+}
+
+.xy_class_box_cla_newprobox_sort {
+	clear: both;
+	width: 960px;
+	margin: 0 auto;
+	border: 1px solid #d0d0d0;
+	background-color: #FFF;
+	overflow: auto;
+	margin-top: 10px;
+}
+
+.xy_class_box_cla_box_newprobox_sort {
+	padding: 6px 0 3px 0;
+	line-height: 40px;
+ 
+	min-height: 32px;
+	border-bottom: 3px solid #BA1630;
+}
+
+.show_all_sort ul li {
+line-height: 33px;
+}
+
+.show_all_sort {
+	float: left;
+	display: inline;
+	width: 834px;
+	height: auto;
+	overflow: hidden;
+	padding-left: 6px;
+}
+
+.show_all_sort .sort_type li {
+	float: left;
+	border: 1px solid #dadada;
+	background: #F6F6F6;
+	color: #717171;
+	padding: 0 12px;
+	border-left: 0;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+}
+
+.show_all_sort .sort_type li i.down {
+background-position: 13px 0px;
+}
+
+.show_all_sort .sort_type li i {
+position: absolute;
+right: 4px;
+top: 10px;
+width: 8px;
+height: 10px;
+background: url(../../images/pages/product/updown.png) no-repeat;
+display: block;
+}
+
+.show_all_sort .sort_type li i.up {
+background-position: 0px 0px;
+}
+
+.xy_group_con {
+width: 990px;
+margin: 0 auto;
+padding-left: 0px;
+clear: both;
+padding-top: 10px;
+font-family: "微软雅黑";
+}
+
+.xy_group_box {
+float: left;
+width: 300px;
+margin: 15px 15px 0 15px;
+}
+
+.xy_group_box_topcon {
+width: 308px;
+height: 319px;
+background: url("../../images/pages/product/pbg.png") no-repeat;
+}
+
+.xy_group_box_dark {
+clear: both;
+width: 300px;
+height: 8px;
+background: url(/images/graycharm_xy_group.png) 0 -57px no-repeat;
+}
+
+.xy_group_box_text_blod {
+font-weight: bolder;
+text-align: left;
+font-size: 14px;
+font-weight: bolder;
+margin: 5px 10px;
+line-height: 18px;
+color: #454545;
+}
+.xy_group_box_text_blod img{
+	vertical-align: middle;
+	
+}
+
+.xy_group_box_buy_box {
+margin: 0px 8px;
+height: 57px;
+background: url(../../images/pages/product/pricebg.png) no-repeat;
+width: 291px;
+}
+
+.xy_group_box_buy_okbottom {
+text-align: right;
+font-family: "宋体";
+height: 18px;
+margin-right: 8px;
+}
+
+.xy_group_box_buy_ok {
+text-align: right;
+font-family: "宋体";
+font-size: 14px;
+color: #454545;
+height: 22px;
+margin-right: 8px;
+font-weight: bolder;
+}
+
+.xy_group_box_buy {
+float: left;
+height: 48px;
+width: 145px;
+font-family: Arial,Helvetica,sans-serif;
+font-size: 32px;
+color: #FFF;
+text-align: left;
+padding-left: 3px;
+line-height: 48px;
+}
+
+.xy_group_box_topcon_img {
+clear: both;
+z-index: 10;
+margin-top: 8px;
+padding-top: 11px;
+text-align: center;
+height: 180px;
+}
+ 
+ .p_discount{
+  color: white;
+  font-size: 10px;
+  height: 48px;
+  width:60px;
+  line-height: 48px;
+  float: left;
+  position: relative;
+ }
+ .p_discount p{
+ position: absolute;
+ height:35px;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+ }
+ .p_buyer{
+   color: white;
+ 	float: right;
+ 	font-size: 12px;
+   height: 48px;
+   line-height: 48px;
+   margin-right: 10px;
+   
+ 	
+ }

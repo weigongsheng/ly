@@ -80,34 +80,7 @@ a:hover {
 a:focus {
 	outline: none;
 }
-/* hn */
-h1 {
-	font-size: 20px;
-	line-height: 36px;
-}
-h2 {
-	font-size: 18px;
-	line-height: 30px;
-}
-h3 {
-	font-size: 16px;
-	line-height: 24px;
-}
-h4,
-h5,
-h6 {
-	font-size: 12px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: Simsun;
-	font-weight: normal;
-	color: #4d4d4d;
-}
+ 
 /* ul ol dl */
 ul,
 li,
@@ -160,6 +133,7 @@ pre {
 	height: 1px;
 	background-color: rgb(195,195,195);
 	margin: 32px 0;
+	clear: both;
 }
 
 .footDivContent{

@@ -14,7 +14,7 @@
                     <a href="" class="nav_b">新品发布</a>
                                     </li>
                                 <li class="xingyou_nav_ula_li">
-                    <a href="" class="nav_b">度假自由行</a>
+                    <a href="${_ctxPath}/p/product-list.htm" class="nav_b">度假自由行</a>
                                     </li>
                 			 
 				<li class="xingyou_nav_ula_li">

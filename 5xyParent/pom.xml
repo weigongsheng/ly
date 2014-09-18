@@ -12,6 +12,8 @@
 		<module>../base</module>
 		<module>../user</module>
 		<module>../security</module>
+		<module>../product</module>
+		<module>../order</module>
 	
 	</modules>
 	
