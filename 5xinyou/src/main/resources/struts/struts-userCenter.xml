@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="userCenter" extends="5xinyou-default" namespace="/user">
+		 
+		 <action name="userCenter-*" class="com.xinyou5.front.web.action.UserCenterAction" method="{1}">
+        	<result name="success">/WEB-INF/pages/user/userCenter.jsp</result>
+        </action>
+ 
+       
+	</package>
+</struts>

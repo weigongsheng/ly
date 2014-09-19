@@ -364,48 +364,6 @@ a:active {
 	color: #F00
 }
 
- 
-
-.xingyou_logo_bg {
-	clear: both;
-	height: 135px;
-	background: url(../../images/bodybg.png) 0 0px repeat-x
-}
-
-.xingyou_logo_nav {
-	width: 960px;
-	margin: 0 auto
-}
-
-.xingyou_logo {
-	float: left;
-	margin: 10px 10px 10px 0px;
-	height: 69px
-}
- 
-.xingyou_server {
-	float: right;
-	margin-top: 20px;
-	margin-right:-2px;
-	height: 60px;
-	font-size: 12px;
-}
-.xingyou_slogan {
-	float: left;
-	margin-top: 35px;
-	margin-right: -6px;
- 
-}
-
-.xingyou_server ul
-li {
-	margin: 17px 0;
-	padding: 5px;
-	font-weight:bold;
-	float: left;
-	line-height: 22px
-}
-
 .xingyou_nav {
 	clear: both;
 	height: 38px;
@@ -427,15 +385,6 @@ li {
 	letter-spacing: 3px
 }
 
-.xingyou_nav_ula_li_reg {
-	height: 38px;
-	float: left;
-	padding: 0 8px;
-	font-family: "宋体";
-	color: #fff;
-	line-height: 38px;
-	font-size: 12px
-}
 
 .xingyou_nav_ulb {
 	float: right
@@ -459,41 +408,7 @@ li {
 	width: 204px;
 	padding-left: 2px
 }
-
-a.top_a:link,a.top_a:visited,a.top_a:active {
-	font-size: 12px;
-	font-family: "宋体";
-	color: #333;
-	text-decoration: none;
-	line-height: 20px
-}
-
-a.top_a:hover {
-	color: #c90042
-}
-
-a.nav_a:link,a.nav_a:active {
-	display: block;
-	font-size: 14px;
-	font-family: "微软雅黑";
-	color: #fff;
-	text-decoration: none;
-	background-color: #ec1a5b;
-	padding: 0 20px
-}
-
-a.nav_a:hover {
-	color: #fff;
-	background-color: #d3004e;
-	padding: 0 20px
-}
-
-a.nav_a:visited {
-	background-color: #ec1a5b;
-	color: #fff;
-	padding: 0 20px
-}
-
+ 
 a.nav_b:link,a.nav_b:visited,a.nav_b:active {
 	display: block;
 	font-size: 14px;
@@ -516,10 +431,6 @@ a.nav_reg:link,a.nav_reg:visited,a.nav_reg:active {
 	font-family: "宋体";
 	color: #fff;
 	text-decoration: none
-}
-
-a.nav_reg:hover {
-	color: #d3004e
 }
 
 a.nav_reg_new:link,a.nav_reg_new:visited,a.nav_reg_new:active {

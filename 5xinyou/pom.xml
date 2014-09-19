@@ -70,7 +70,7 @@
 						<!-- <connector implementation="org.mortbay.jetty.ajp.Ajp13SocketConnector"> 
 							<port>8009</port> </connector> -->
 					</connectors>
-					<reload>manual</reload>
+					<!-- <reload>manual</reload> -->
 				</configuration>
 				<dependencies>
 					<dependency>

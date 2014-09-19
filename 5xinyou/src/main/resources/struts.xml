@@ -55,4 +55,5 @@
 	 <include file="struts/struts-index.xml"></include>
 	 <include file="struts/struts-user.xml"></include>
 	 <include file="struts/struts-product.xml"></include>
+	 <include file="struts/struts-userCenter.xml"></include>
 </struts>

@@ -1,3 +1,5 @@
+@CHARSET "UTF-8";
+@IMPORT url("head.css");
 #kinMaxShow
 ul {
 	width: 100px;

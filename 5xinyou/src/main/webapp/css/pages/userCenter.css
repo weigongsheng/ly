@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+@IMPORT url("head.css");
+
+#top{
+	
+}
+.navigator{
+	width: 960px;
+	margin: 20px auto;
+	 
+}
+
+.navBody{
+	width:180px;
+	margin-left: 0;
+	padding-left: 0;
+	font: normal bold 14px "微软雅黑";
+}
+
+#centerContent{
+	width: 960px;
+	margin: 15px auto 20px auto;
+	padding-top: 30px;
+	position: relative;
+	height: 600px;
+}
+
+.menu{
+	width: 174px;
+	padding-top: 20px;
+	position: absolute;
+	
+	
+	 
+}
+
+#content{
+	width: 700px;
+	background-color:#FFF;
+	border: 1px solid  #C2C2C2; 
+	position: absolute;
+	left: 181px;
+	min-height: 590px;
+	z-index: -1;
+}
+
+#centerContent li{
+	font:normal 14px '微软雅黑';
+	text-align: center;
+	width: 174px;
+	height: 45px;
+	line-height:45px;
+	cursor: pointer;
+}
+
+#centerContent li.top{
+	font:normal bold 16px '微软雅黑';
+	line-height: 45px;
+	background-position: 20px 11px;
+	background-repeat: no-repeat;
+}
+#centerContent li.order{
+	background-image: url("../../images/usercenter/u_order.png");
+}
+#centerContent li.account{
+	background-image: url("../../images/usercenter/u_account.png");
+}
+#centerContent li.coupon{
+	background-image: url("../../images/usercenter/u_coupon.png");
+}
+#centerContent li.selected{
+	 background-color: #FFF;
+	 border-top: 1px solid  #C2C2C2; 
+	 border-bottom: 1px solid  #C2C2C2; 
+	 border-left: 1px solid  #C2C2C2; 
+	 border-right: 1px solid  #FFF; 
+	 border-left: 7px solid  rgb(185,18,44); 
+	 border-radius:5px 0 0 5px;
+}
+#centerContent li:HOVER{
+	 background-color: #FFF;
+	  
+}
+.footSplit{
+	width: 100%;
+	clear: both;
+	height: 1px;
+	margin: 30px auto;
+	background-color:  #C2C2C2;
+}
