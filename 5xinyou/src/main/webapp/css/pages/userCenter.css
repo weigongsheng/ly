@@ -20,36 +20,37 @@
 #centerContent{
 	width: 960px;
 	margin: 15px auto 20px auto;
-	padding-top: 30px;
+	padding-top: 0px;
 	position: relative;
-	height: 600px;
+	height: 700px;
 }
 
 .menu{
 	width: 174px;
-	padding-top: 20px;
+	padding-top: 10px;
 	position: absolute;
-	
+	z-index: 6;
 	
 	 
 }
 
 #content{
-	width: 700px;
+	width: 770px;
 	background-color:#FFF;
 	border: 1px solid  #C2C2C2; 
 	position: absolute;
-	left: 181px;
-	min-height: 590px;
-	z-index: -1;
+	left: 198px;
+	min-height: 657px;
+	z-index: 5;
 }
 
+
 #centerContent li{
-	font:normal 14px '微软雅黑';
+	font:normal 16px '微软雅黑';
 	text-align: center;
-	width: 174px;
-	height: 45px;
-	line-height:45px;
+	width: 192px;
+	height: 49px;
+	line-height:49px;
 	cursor: pointer;
 }
 
@@ -88,3 +89,117 @@
 	margin: 30px auto;
 	background-color:  #C2C2C2;
 }
+
+#orderTable{
+	width: 100%
+	
+}
+#orderTable thead {
+	 background-color: rgb(234,232,233)
+	 
+}
+#orderTable td{
+	text-align: center;
+}
+#orderTable thead tr {
+	 height: 38px;
+	 font: normal bold 16px "微软雅黑";
+	  
+}
+#orderTable tbody tr {
+	 height: 38px;
+	 font: normal   16px "微软雅黑";
+	 
+	  
+}
+
+#content #userInfo{
+	padding-left: 124px;
+	padding-right: 101px;
+	padding-top: 44px;
+	font: normal normal 18px "微软雅黑";
+	line-height: 75px;
+	
+}
+#userInfo .left{
+	float: left;
+	width: 110px;
+}
+#userInfo .right{
+	float: right;
+	width: 360px;
+}
+#userInfo .right a{
+	 color: #c5192f;
+	 text-decoration: none;
+}
+#userInfo .right *{
+	margin-right: 15px;
+}
+
+#userInfo .saveBtn{
+	 clear: both;
+}
+
+#userInfo .contSplit{
+	 clear: both;
+	 width: 100%;
+	 height: 1px;
+	background-color: rgb(234,232,233);
+}
+
+#userInfo select{
+	height: 28px;
+}
+
+#userInfo .saveBtn{
+	height: 43px;
+	width: 126px;
+	background: url("../../images/pages/user/infoSaveBtbg.png") no-repeat;
+	border: 0;
+}
+
+#myPic{
+	height: 253px;
+	margin-top: 98px;
+}
+
+#myPicLeft{
+	height: 100%;
+	width: 253px;
+	float: left;
+	margin-left: 24px;
+} 
+
+#myPicLeft img{
+	margin: 2px;
+	
+}
+
+#myPicRight{
+	height: 100%;
+	width: 450px;
+	float:right;
+	margin-right: 30px;
+	position: relative;
+}
+
+#myPicRight input[type=button]{
+	width:177px;	 
+	 height: 52px;
+	 position: absolute;
+	 border-width: 1px;
+}
+
+#myPicRight .upload{
+	left :142px;
+	top:65px;
+	background: url("../../images/pages/user/upload.png") no-repeat center;
+}
+#myPicRight .photo{
+	left :142px;
+	top:134px;
+	background: url("../../images/pages/user/photo.png") no-repeat center;
+}
+
+ 

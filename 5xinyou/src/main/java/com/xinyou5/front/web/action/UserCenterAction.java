@@ -17,4 +17,28 @@ public class UserCenterAction extends BaseAction {
 		//user =seUserService.getCurrentUser();
 		return SUCCESS;
 	}
+	
+	public String myOrder(){
+		
+		return "myOrder";
+	}
+	
+	public String userInfo(){
+		
+		return "userInfo";
+	}
+	public String headPic(){
+		
+		return "headPic";
+	}
+	
+	public String changePwd(){
+		
+		return "changePwd";
+	}
+	public String myCoupon(){
+		
+		return "myCoupon";
+	}
+ 	 
 }

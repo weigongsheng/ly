@@ -7,6 +7,11 @@
 		 
 		 <action name="userCenter-*" class="com.xinyou5.front.web.action.UserCenterAction" method="{1}">
         	<result name="success">/WEB-INF/pages/user/userCenter.jsp</result>
+        	<result name="myOrder">/WEB-INF/pages/user/myorder.jsp</result>
+        	<result name="userInfo">/WEB-INF/pages/user/userInfo.jsp</result>
+        	<result name="changePwd">/WEB-INF/pages/user/changePwd.jsp</result>
+        	<result name="headPic">/WEB-INF/pages/user/headPic.jsp</result>
+        	<result name="myCoupon">/WEB-INF/pages/user/myCoupon.jsp</result>
         </action>
  
        

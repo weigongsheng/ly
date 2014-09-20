@@ -18,22 +18,22 @@
 <div id="centerContent">
 <div class="menu" >
  <ul>
- 	 <li class="top order selected">订单</li>
- 	 <li class="sub ">全部</li>
- 	 <li class="sub">已付款</li>
- 	 <li class="sub">未付款</li>
- 	 <li class="sub">已完成</li>
+ 	 <li class="top order ">订单</li>
+ 	 <li class="sub selected" onclick="showContent('userCenter-myOrder.htm',this)">全部</li>
+ 	 <li class="sub" onclick="showContent('userCenter-myOrder.htm?ot=9',this)">已付款</li>
+ 	 <li class="sub" onclick="showContent('userCenter-myOrder.htm?ot=8',this)">未付款</li>
+ 	 <li class="sub" onclick="showContent('userCenter-myOrder.htm?ot=10',this)">已完成</li>
  	 <li class="top account">账户</li>
- 	 <li class="sub">基本信息</li>
- 	 <li class="sub">修改头像</li>
- 	 <li class="sub">修改密码</li>
- 	 <li class="top coupon">优惠券</li>
- 	 <li class="sub">未使用</li>
- 	 <li class="sub">已使用</li>
+ 	 <li class="sub "  onclick="showContent('userCenter-userInfo.htm',this)">基本信息</li>
+ 	 <li class="sub" onclick="showContent('userCenter-headPic.htm',this)">修改头像</li>
+ 	 <li class="sub " onclick="showContent('userCenter-changePwd.htm',this)">修改密码</li>
+ 	 <li class="top coupon" >优惠券</li>
+ 	 <li class="sub " onclick="showContent('userCenter-myCoupon.htm?ct=2',this)">未使用</li>
+ 	 <li class="sub"  onclick="showContent('userCenter-myCoupon.htm?ct=3',this)">已使用</li>
  </ul>
 </div>
 <div id="content">
-
+	<jsp:include page="myorder.jsp"></jsp:include>
 </div>
 </div>
 <div class="footSplit">
@@ -45,5 +45,6 @@
 	<script type="text/javascript" src="${_jsPath }/plugin/formvalidator/formValidator-4.1.3.js"></script>
 	<script type="text/javascript" src="${_jsPath }/plugin/plugin.js"></script>
 	<script type="text/javascript" src="${_jsPath }/pages/regest.js"></script>
+	<script type="text/javascript" src="${_jsPath }/pages/user/ucenter.js"></script>
 </body>
 </html>
