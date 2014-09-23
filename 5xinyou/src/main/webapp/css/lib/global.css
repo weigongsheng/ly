@@ -23,6 +23,11 @@ body, button, input, select, textarea{
 	font: 12px/1.5 Simsun,tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
 }
 
+.pageWidth{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
 button,
 input,
 select,

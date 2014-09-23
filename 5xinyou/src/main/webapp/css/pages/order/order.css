@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+@IMPORT url("../head.css");
+
+#settleAccountBody{
+	background-color: #fff;
+	font-family: "微软雅黑"
+}
+
+#settleTip{
+	width: 200px;
+	text-align: center;
+	font: normal bold 15px "微软雅黑";
+	margin: 10px auto;
+}
+
+.settleContent{
+	width: 940px;
+	margin : 20px 10px ;
+}
+
+#settltFlow{
+	height: 50px;
+}
+#settltFlow div{
+	color: #FFF;
+	text-align: center;
+	height: 50px;
+	width: 313px;
+	float: left;
+	font: normal normal 16px "微软雅黑";
+	line-height: 50px;
+}
+#step1{
+	background-color: #cd1e32;
+}
+#step2,#step3{
+	background-color: #FC7382;
+	
+}
+ 
+.proTable thead tr{
+	background-color: #e5e5e5;
+}
+.proTable thead td{
+	font :normal bold 16px '微软雅黑';
+}
+.proTable tbody td{
+	padding: 8px 7px;
+}
+.proTable tbody tr{
+	background-color: #f5f4f4;
+}
+.settleSubmit{
+	 background: url(../../../images/pages/order/settSubmBt.png) no-repeat;
+	 border: 0;
+	 width: 193px;
+	 height: 61px;
+	 color: #FFF;
+	 font: normal normal 22px '微软雅黑';
+}
+
+
+ 

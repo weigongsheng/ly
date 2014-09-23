@@ -202,4 +202,8 @@
 	background: url("../../images/pages/user/photo.png") no-repeat center;
 }
 
+.loadingBg{
+	background:  url("../../images/loading2.gif") no-repeat center;
+}
+
  

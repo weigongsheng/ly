@@ -19,7 +19,12 @@ public class UserCenterAction extends BaseAction {
 	}
 	
 	public String myOrder(){
-		
+//		try {
+//			Thread.sleep(5*1000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return "myOrder";
 	}
 	

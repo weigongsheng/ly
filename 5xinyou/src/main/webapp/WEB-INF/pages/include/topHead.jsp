@@ -9,7 +9,8 @@
            <ul>
            <s:if 
             	test="#session['SPRING_SECURITY_CONTEXT'].authentication.principal  !=null">
-            	<li style="white-space:nowrap;text-overflow:ellipsis; width: 160px;overflow: hidden;height: 26px">您好 ${session['SPRING_SECURITY_CONTEXT'].authentication.principal.username }</li>
+            	<li style="white-space:nowrap;text-overflow:ellipsis; width: 120px;overflow: hidden;height: 26px">您好
+            	<a href="${_ctxPath}/user/userCenter-userCenter.htm" >${session['SPRING_SECURITY_CONTEXT'].authentication.principal.username }</a></li>
                 <li><a href="${_ctxPath}/j_spring_security_logout">退出</a></li>
             	</s:if><s:else>
             	<li>
