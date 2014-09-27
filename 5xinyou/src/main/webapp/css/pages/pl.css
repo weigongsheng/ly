@@ -70,6 +70,10 @@ ul,ol,li {
 /* .pt,.ptSelected{
 	font:normal bold 15px "微软雅黑";
 } */
+a:HOVER{
+	text-decoration: none;
+}
+ 
 a.pt:link,a.pt:visited,a.pt:active {
 	float: left;
 	display: block;

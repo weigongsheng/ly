@@ -38,6 +38,9 @@
 	
 }
  
+.proTable{
+	font-size:16px; 
+} 
 .proTable thead tr{
 	background-color: #e5e5e5;
 }
@@ -59,5 +62,38 @@
 	 font: normal normal 22px '微软雅黑';
 }
 
+.countOpt {
+	cursor: pointer;
+	display: inline-block;
+	width: 20px;
+	height:20px;
+	text-align: center;
+	line-height: 20px;
+	border: 1px solid #cdcdcd;
+	background: #fff;
+	vertical-align: middle;
+}
 
- 
+.count_input {
+	margin: auto 10px auto 7px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	width: 54px;
+	padding: 2px 0 2px 0px;
+	vertical-align: middle;
+}
+
+.useCoupon{
+	width: 20px;
+	height: 20px;
+}
+
+.getValidate{
+	height: 40px;
+	width: 133px;
+	cursor: pointer;
+	color: 	#c5192f;
+	font:  normal normal 16px '微软雅黑';
+}
+
