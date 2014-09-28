@@ -73,7 +73,7 @@
 
 <div class="pageWidth detailHead" ><span>本单详情</span></div>
 <div class="pageWidth redSplit"></div>
-<div class="spcTip tableBody">【特别提醒】<br>
+<div class="spcTip tableBody" >【特别提醒】<br>
 为避免造成您的损失，请在购买后尽早确预约您的行程。若因房满无法预订，请变更您的行程安排或联系客户进行退款，敬请谅解！
 </div>
 <div class="tableHead"><span class="headLeft">五星浦东希尔顿海景房（双人）2晚</span> <span class="headRight">挂牌价：￥1,680.00</span> </div>

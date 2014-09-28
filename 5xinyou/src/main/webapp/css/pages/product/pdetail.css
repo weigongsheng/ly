@@ -12,6 +12,7 @@ body{
 	height: 0px;
 	border: 1px solid #C03;
 	margin-bottom: 24px;
+	margin-top: 10px;
 }
 
 
@@ -40,6 +41,10 @@ body{
 	height: 27px;
     line-height: 27px;
 	 
+}
+
+.spcTip{
+	color: #c51931;
 }
  .headLeft{
   float: left;
