@@ -27,6 +27,10 @@ public class ProductAction extends BaseAction {
 		allProduct = productService.queryProductByType(t);
 		return "list";
 	}
+	
+	public String detail(){
+		return "detail";
+	}
 
 	private void processTotal(List<ProductKind> allKind2, List<ProductKind> temp) {
 		 if(temp == null || temp.isEmpty()){

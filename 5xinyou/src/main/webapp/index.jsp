@@ -39,12 +39,12 @@
     <div class="xy_right_advr_box">
    	<div class="xy_r_pro_headbox">
    	<div class="xy_r_pro_headleft">
-   		<a href="${_ctxPath}/order/order-settleAccounts.htm"  >
+   		<a href="${_ctxPath}/p/product-detail.htm"  >
    		<span class="xy_r_pro_head1"><span class="rmb">￥</span>1988 </span>  
    		</a>
    	</div>
    	<div class="xy_r_pro_headright">
-   		<a href=""  >
+   		<a href="${_ctxPath}/p/product-detail.htm"  >
    		<span class="xy_r_pro_head2">查看详情</span>
    		</a>
    	</div>
