@@ -18,6 +18,8 @@ public class ProductAction extends BaseAction {
 	private Integer t= 0;
 	private List<ProductKind> allKind;
 	private List<Product> allProduct;
+	private Integer proId;
+	private Product product;
 
 	public String list() {
 		List<ProductKind> temp  = productService.listType(t);
@@ -29,6 +31,7 @@ public class ProductAction extends BaseAction {
 	}
 	
 	public String detail(){
+		product =productService.queryById(proId);
 		return "detail";
 	}
 
@@ -68,6 +71,19 @@ public class ProductAction extends BaseAction {
 	public List<Product> getAllProduct() {
 		return allProduct;
 	}
+
+	public Integer getProId() {
+		return proId;
+	}
+
+	public void setProId(Integer pId) {
+		this.proId = pId;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
 	
 
 }

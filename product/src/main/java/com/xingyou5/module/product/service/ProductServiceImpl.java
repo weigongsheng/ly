@@ -1,16 +1,21 @@
 package com.xingyou5.module.product.service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.xingyou5.module.product.dao.ProductDao;
 import com.xingyou5.module.product.entity.ProductKind;
 import com.xingyou5.module.product.vo.Product;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-
+	@Autowired
+	ProductDao productDao;
+	
 	@Override
 	public List<ProductKind> listType(Integer type) {
 		List<ProductKind> all = new ArrayList<ProductKind>();
@@ -49,12 +54,17 @@ public class ProductServiceImpl implements ProductService {
 			p.setDescription("【武义 清水湾沁温泉】温泉抢先购，低价吓到你！免费升级房型！泡AAAA级纯天然“...");
 			p.setImgUrl("lp_1.png");
 			p.setBuyers(10);
-			p.setOrignalPrice("356");
-			p.setPrice("386");
+			p.setOrignalPrice(new BigDecimal("356"));
+			p.setPrice(new BigDecimal("356"));
 			p.setDiscount("3.5");
 			all.add(p);
 		}
 		return all;
+	}
+
+	@Override
+	public Product queryById(Integer pId) {
+		return productDao.get(pId);
 	}
 	 
 

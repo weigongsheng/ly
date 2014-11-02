@@ -9,4 +9,6 @@ public interface ProductService {
 	List<ProductKind> listType(Integer type);
 	
 	List<Product> queryProductByType(Integer type);
+
+	Product queryById(Integer pId);
 }

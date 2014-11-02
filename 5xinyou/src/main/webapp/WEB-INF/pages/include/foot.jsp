@@ -7,11 +7,11 @@
 <div class="foot">
   <div id="footNav" class="footDivContent">
  	<ul>
- 		<li><img class="fdcLeft" alt="售后服务" src="${_imagesPath}/pages/foot/sellServ.png">  <a class="fdcRight" href="">售后服务</a></li>
- 		<li><img class="fdcLeft" alt="售后服务" src="${_imagesPath}/pages/foot/problem.png">  <a class="fdcRight" href="">常见问题</a></li>
- 		<li><img class="fdcLeft" alt="售后服务" src="${_imagesPath}/pages/foot/paydesc.png">  <a class="fdcRight" href="">支付说明</a></li>
- 		<li><img class="fdcLeft" alt="售后服务" src="${_imagesPath}/pages/foot/aboutus.png">  <a class="fdcRight" href="">联系我们</a></li>
- 		<li><img class="fdcLeft" alt="售后服务" src="${_imagesPath}/pages/foot/brandcenter.png">  <a class="fdcRight" href="">品牌中心</a></li>
+ 		<li><img class="fdcLeft" alt="" src="${_imagesPath}/pages/foot/sellServ.png">  <a class="fdcRight" href=""><spring:message code="ui.lable.afterSaleService"/></a></li>
+ 		<li><img class="fdcLeft" alt="" src="${_imagesPath}/pages/foot/problem.png">  <a class="fdcRight" href="">常见问题</a></li>
+ 		<li><img class="fdcLeft" alt="" src="${_imagesPath}/pages/foot/paydesc.png">  <a class="fdcRight" href="">支付说明</a></li>
+ 		<li><img class="fdcLeft" alt="" src="${_imagesPath}/pages/foot/aboutus.png">  <a class="fdcRight" href="">联系我们</a></li>
+ 		<li><img class="fdcLeft" alt="" src="${_imagesPath}/pages/foot/brandcenter.png">  <a class="fdcRight" href="">品牌中心</a></li>
  	</ul>
   </div>
   <div id="servQuntity" class="footDivContent">

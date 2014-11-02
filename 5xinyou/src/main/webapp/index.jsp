@@ -15,61 +15,64 @@
 
 	<div class="kinMaxWrapper" style="margin:0 auto;width:960px;">
 	<div id="kinMaxShow" class="xinoyou_lunbo" style="height:auto;">
-		<div><a href="" target="_blank" ><img class="lunbo" src="${_imagesPath}/product/p001.jpg"/></a></div>
-		<div><a href="" target="_blank" ><img class="lunbo" src="${_imagesPath}/product/p002.jpg"/></a></div>
-		<div><a href="" target="_blank" ><img class="lunbo" src="${_imagesPath}/product/p003.jpg"/></a></div>
+		<c:forEach items="${slideAdvs}" var="sitem">
+		<div><a href="${_ctxPath}${sitem.targetUrl}" target="_blank" ><img class="lunbo" src="${_imagesPath}${sitem.picUrl}"/></a></div>
+		</c:forEach>
 	</div> 
    </div>
-   <c:forEach items="${advList}" var="curAdv" varStatus="pIndex">
+   <c:forEach items="${advList}" var="adv" varStatus="pIndex">
    <div class="xy_adv_list" style="margin-top:15px;">
     <div class="xy_adv_tip" >
      <div class="xy_adv_tip_title">
-     	<a href="">东方明珠</a>
+     	<a href="${_ctxPath}/p/product-detail.htm?proId=${adv.product.id}">${adv.product.name}</a>
      </div>
      <div class="xy_adv_tip_content">
-     【常州 奥阳华美达】2天1晚双人自由行 中华恐龙园+3大景点门票，1加仑全部奉上!仅698元，享原价1544元常州奥阳华美达大酒店高级双床房1晚+精美自助早餐2份+常州恐龙园门票2张+首日赠送大林寺景区门票2张+白龙
+     ${adv.product.recommendation}
      </div>
     </div>
     <div class="xy_product_info" >
     
    <div class="xy_left_pic">
-   	<img alt="" src="${_imagesPath}/product/pleft_00${pIndex.index}.jpg" width="562" height="357">
+   <a href="${_ctxPath}/p/product-detail.htm?proId=${adv.product.id}">
+   	<img alt="" src="${_imagesPath}${adv.product.imgUrl}" width="562" height="357">
+   </a>
    </div>
    
     <div class="xy_right_advr_box">
    	<div class="xy_r_pro_headbox">
    	<div class="xy_r_pro_headleft">
-   		<a href="${_ctxPath}/p/product-detail.htm"  >
-   		<span class="xy_r_pro_head1"><span class="rmb">￥</span>1988 </span>  
+   		<a href="${_ctxPath}/p/product-detail.htm?proId=${adv.product.id}"  >
+   		<span class="xy_r_pro_head1"><span class="rmb">￥</span>${adv.product.price} </span>  
    		</a>
    	</div>
    	<div class="xy_r_pro_headright">
-   		<a href="${_ctxPath}/p/product-detail.htm"  >
-   		<span class="xy_r_pro_head2">查看详情</span>
+   		<a href="${_ctxPath}/p/product-detail.htm?proId=${adv.product.id}"  >
+   		<span class="xy_r_pro_head2"><spring:message code="ui.link.viewdetail"/></span>
    		</a>
    	</div>
    	</div>
+		        <input name="leftTime"  type="hidden" value="${adv.product.leftTime/1000}"></input>
    
 		        <ul class="jialun_left_pro_left_ula">
-		            <li class="jialun_left_pro_left_a_li">市场价</li>
-		            <li class="jialun_left_pro_left_a_li">折扣</li>
-		            <li class="jialun_left_pro_left_a_li">您节省</li>
+		            <li class="jialun_left_pro_left_a_li"><spring:message code="ui.label.mPrice"/></li>
+		            <li class="jialun_left_pro_left_a_li"><spring:message code="ui.label.discount"/></li>
+		            <li class="jialun_left_pro_left_a_li"><spring:message code="ui.label.saved"/></li>
 		        </ul>
 		        <ul class="jialun_left_pro_left_ulb">
-		            <li class="jialun_left_pro_left_b_li" style=" text-decoration: line-through;">￥1544</li>
-		            <li class="jialun_left_pro_left_b_li" style="color:#C03;">4.5</li>
-		            <li class="jialun_left_pro_left_b_li">￥846</li>
+		            <li class="jialun_left_pro_left_b_li" style=" text-decoration: line-through;">￥${adv.product.orignalPrice}</li>
+		            <li class="jialun_left_pro_left_b_li" style="color:#C03;">${adv.product.discount}</li>
+		            <li class="jialun_left_pro_left_b_li">￥${adv.product.orignalPrice - adv.product.price}</li>
 		        </ul>
 		        <ul id="contdown_html_0" class="jialun_left_pro_left_ulc">
 		        <li class="jialun_left_pro_left_c_li"><img src="${_imagesPath}/pages/clock.png"  > </li>
-		            <li id="contdown_Day_0" class="jialun_left_pro_left_c_li">113</li>
-		            <li class="jialun_left_pro_left_c2_li">天</li>
-		            <li id="contdown_Houcre_0" class="jialun_left_pro_left_c_li">23</li>
-		            <li class="jialun_left_pro_left_c2_li">时</li>
-		            <li id="contdown_Me_0" class="jialun_left_pro_left_c_li">00</li>
-		            <li class="jialun_left_pro_left_c2_li">分</li>
-		            <li id="contdown_Min_0" class="jialun_left_pro_left_c_li">36</li>
-		            <li class="jialun_left_pro_left_c2_li">秒</li>
+		            <li id="contdown_Day_0" class="jialun_left_pro_left_c_li ltDay"></li>
+		            <li class="jialun_left_pro_left_c2_li"><spring:message code="ui.label.day"/></li>
+		            <li id="contdown_Houcre_0" class="jialun_left_pro_left_c_li ltHour"></li>
+		            <li class="jialun_left_pro_left_c2_li"><spring:message code="ui.label.hour"/></li>
+		            <li id="contdown_Me_0" class="jialun_left_pro_left_c_li ltMi"></li>
+		            <li class="jialun_left_pro_left_c2_li"><spring:message code="ui.label.short.minute"/></li>
+		            <li id="contdown_Min_0" class="jialun_left_pro_left_c_li ltSec"></li>
+		            <li class="jialun_left_pro_left_c2_li"><spring:message code="ui.label.short.second"/></li>
 		        </ul>
 		        <ul class="jialun_left_pro_left_uld">
 		            <li class="jialun_left_pro_left_d_li"><span style=" font-size:22px; font-weight:bold; color:#f60; ">308</span>人已购买<br>数量有限，下手要快哦！</li>
@@ -91,5 +94,6 @@
 	});
 </script>
 	<%@ include file="/WEB-INF/pages/include/foot.jsp"%>
+	<script type="text/javascript" src="${_jsPath }/pages/product/product.js"></script>
 </body>
 </html>
