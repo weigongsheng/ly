@@ -75,7 +75,7 @@
 		            <li class="jialun_left_pro_left_c2_li"><spring:message code="ui.label.short.second"/></li>
 		        </ul>
 		        <ul class="jialun_left_pro_left_uld">
-		            <li class="jialun_left_pro_left_d_li"><span style=" font-size:22px; font-weight:bold; color:#f60; ">308</span>人已购买<br>数量有限，下手要快哦！</li>
+		            <li class="jialun_left_pro_left_d_li"><span style=" font-size:22px; font-weight:bold; color:#f60; ">308</span><spring:message code="ui.label.buy.tip"></spring:message></li>
 		        </ul>
 		    
 	 </div>

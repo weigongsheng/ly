@@ -20,6 +20,7 @@
 		product p ON adv.`productId` = p.`id`
 		<where>
 			adv.type = #{type}
+			and adv.isDeleted != 1
 		</where>
 	</select>
 

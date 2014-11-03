@@ -27,7 +27,7 @@
                 </div>
                 <div class="xingyou_nav_ulb_search_search" style="float:right;   padding:0; margin:0; border:none; display:inline;">
                 <a href="javascript:void(0);" onclick="">
-                <img src="${_imagesPath}/btn/search_btn.png" width="50" height="29" alt="我要搜">
+                <img src="${_imagesPath}/btn/search_btn.png" width="50" height="29" alt="">
                 </a>
                 </div>
             </div>
